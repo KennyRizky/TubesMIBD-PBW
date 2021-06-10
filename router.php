@@ -1,6 +1,6 @@
 <?php
     $url = $_SERVER['REDIRECT_URL'];
-    $baseURL = '/Tubes';
+    $baseURL = '/TubesMIBD-PBW';
 
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         switch ($url) {
