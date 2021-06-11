@@ -14,9 +14,29 @@ body{
     padding: 0.3em;
 }
 
-a{
+.navbutton{
     text-decoration: none;
     color: blueviolet;
     font-family: "Gill Sans", sans-serif;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 20% 65% 15%;
+    align-items: center;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#account{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logosearch{
+    color: blueviolet;
 }
 
