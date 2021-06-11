@@ -9,6 +9,11 @@
                 $indexCtrl = new IndexController();
                 echo $indexCtrl->view_index();
                 break;
+            case $baseURL.'/companyprofile':
+                require_once "controller/indexController.php";
+                $indexCtrl = new IndexController();
+                echo $indexCtrl->view_company_profile();
+                break;
             default:
                 echo '404 Not Found';
                 break;

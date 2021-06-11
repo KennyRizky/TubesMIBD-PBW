@@ -12,6 +12,10 @@ class IndexController{
     public function view_index(){
         return View::createView('index.php',[]);
     }
+
+    public function view_company_profile(){
+        return View::createView('companyprofile.php',[]);
+    }
 }
 
 
