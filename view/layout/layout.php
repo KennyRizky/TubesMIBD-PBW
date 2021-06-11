@@ -9,8 +9,6 @@
 		<a href="index">Home</a>
 		<a href="index">Courses</a>
 		<a href="index">About</a>
-
-
 	</div>
 	<?php echo $content; ?>
 
