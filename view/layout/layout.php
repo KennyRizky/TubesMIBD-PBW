@@ -8,24 +8,25 @@
 	<div id="header">
 
 		<a id="logo" href="index">Study Hub</a>
-		<div id="nav">
 
+		<div id="nav">
 			<a class="navbutton" href="index">Home</a>
-			<a class="navbutton" href="index">Courses</a>
-			<a class="navbutton"href="index">About</a>
+			<a class="navbutton" href="courses">Courses</a>
+			<a class="navbutton" href="about">About</a>
 
 			<div id="searchbar">
 				<input id="logosearch" type="text" placeholder="Search..">
 				<i class="fa fa-search"></i>
 			</div>
-
-
 		</div>
+
 		<div id="account">
-			<a class="navbutton" href="index">Sign In</a>
-			<a class="navbutton" href="index">Register</a>
+			<a class="navbutton" href="signin">Sign In</a>
+			<a class="navbutton" href="register">Register</a>
 		</div>
+
 	</div>
+	
 	<?php echo $content; ?>
 
 </body>
