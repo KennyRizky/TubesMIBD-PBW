@@ -119,3 +119,51 @@ body{
     height: 100%;
     object-fit: cover;
 }
+
+#home1{
+    width: 100%;
+    height: 363px; 
+    background-color: black;
+}
+.header1{
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 72px;
+    margin: 0;
+}
+.header1Content{
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 80px;
+}
+.header1Content1{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 35px;
+    
+}
+#home2{
+    width: 100%;
+    height: 400px; 
+}
+#home3{
+    width: 100%;
+    height: 250px;
+    background-color: orange;
+}
+#startBtn{
+    display: flex;
+   justify-content: center;
+}
+#Btn{
+    width: 255px;
+    height: 64px;
+    border-radius: 15px;
+    margin-top: 15px;
+    background-color: lightgreen;
+}
