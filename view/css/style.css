@@ -86,7 +86,6 @@ body{
 }
 
 #contact{
-    border: 1px black solid;
     border-radius: 0.25em;
     width: 35%;
     margin-right: 5px;
@@ -94,16 +93,17 @@ body{
     box-shadow: 0 0 5px 0 ;
     background-color:#ebcc34;
     backdrop-filter: blur(2rem);
-
+    margin-bottom: 10px;
 }
 
 #visimisi{
     border-radius: 0.25em;
-    border: 1px black solid;
     width: 65%;
     padding-left: 10px;
     box-shadow: 0 0 5px 0 ;
     backdrop-filter: blur(2rem);
+    margin-bottom: 10px;
+
 }
 
 #info{
