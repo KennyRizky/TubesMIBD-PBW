@@ -181,8 +181,9 @@ body{
     display: flex;
     justify-content: center;
     margin-bottom: 0.1em;
-/*SignIn*/
 }
+
+/*SignIn*/
 
 #checker1, #checker2{
     display:none;

@@ -15,6 +15,10 @@
     </div>
 </div>
 
+<div id="testimoni">
+    <h1>MEET OUR COMMUNITY</h1>
+</div>
+
 <div id="info">
     <div id="contact">
         <h1>Our Story</h1>
