@@ -1,104 +1,104 @@
-drop table member
+CREATE TABLE Member(
+	IdM INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
+	nama VARCHAR (50),
+	alamat VARCHAR (100),
+	email VARCHAR (50),
+	wallet decimal(15,2)
+);
 
-create table Member(
-	IdM int primary key,
-	nama varchar (50),
-	alamat varchar (100),
-	email varchar (50),
-	wallet money
-)
+CREATE TABLE Transaksi_kupon (
+	IdTR INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
+	waktu_transaksi DATE,
+	IdM INT (6) UNSIGNED,
+	CONSTRAINT FK_IdM
+		FOREIGN KEY (IdM) REFERENCES Member(IdM)
+);
 
-create table Transaksi_kupon (
-	waktu_transaksi date,
-	IdTR int primary key,
-	IdM int foreign key(
-		IdM
-	) references Member(IdM)
-)
+CREATE TABLE kupon (
+	IdK INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nominal decimal(15,2),
+	kode_kupon VARCHAR (10)
+);
 
-create table Tkupon (
-	IdTR int foreign key(
-		IdTR
-	) references Transaksi_kupon(IdTR),
-	IdK int foreign key(
-		IdK
-	) references kupon (IdK)
-)
-
-create table kupon (
-	nominal money,
-	IdK int,
-	kode_kupon varchar (10)
-)
-
-create table  enrollment (
-	IdE int primary key,
-	wktEnrollment date
-)
-
-create table enrollment_member (
-	IdM int foreign key (
-		IdM
-		) references member (IdM),
-	IdE int foreign key (
-		IdE
-	) references enrollment (IdE)
-)
-
-create table nilai (
-	IdN int primary key,
-	jumlah_nilai int,
-	IdC int foreign key (
-		IdC
-	) references course (IdC)
-)
-
-create table nilai_member (
-	IdM int foreign key (
-		IdM
-		) references member (IdM),
-	IdN int foreign key (
-		IdN 
-	) references nilai (IdN)
-)
-
-create table course (
-	batas_nilai int,
-	judulCourse varchar (50),
-	IdC int primary key,
-	IdS int,
-	waktu_terbit_sertif date,
-	IdP int foreign key (
-		IdS
-	) references pengajar (IdS)
-)
-
-create table course_enrollment (
-	IdE int foreign key (
-		IdE
-	) references enrollment (IdE),
-	IdC int foreign key (
-		IdC
-	) references course (IdC)
-)
-
-create table isi_course (
-	IdC int foreign key (
-		IdC
-	) references course (IdC),
-	IdMod int,
-	id_ujian int
-)
+CREATE TABLE Tkupon (
+	IdTR INT (6) UNSIGNED,
+	IdK INT (6) UNSIGNED,
+	CONSTRAINT FK_IdTR
+		FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
+	CONSTRAINT FK_IdK
+		FOREIGN KEY (IdK) REFERENCES kupon(IdK)
+);
 
 
-create table pengajar (
-	nama varchar (50),
-	IdP int primary key,
-	email varchar (50)
-)
-create table admin (
-	idA int primary key 
-)
+CREATE TABLE  enrollment (
+	IdE INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	wktEnrollment DATE
+);
+
+CREATE TABLE enrollment_member (
+	IdM INT (6) UNSIGNED,
+	IdE INT (6) UNSIGNED,
+	CONSTRAINT fkidm
+		FOREIGN KEY (IdM) REFERENCES member(IdM),
+	CONSTRAINT fkide
+		FOREIGN KEY (IdE) REFERENCES enrollment(IdE)
+);
+
+CREATE TABLE pengajar (
+	IdP INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nama VARCHAR (50),
+	email VARCHAR (50)
+);
+
+CREATE TABLE course (
+	IdC INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	batas_nilai INT (6),
+	judulCourse VARCHAR (50),
+	IdS INT (6),
+	waktu_terbit_sertif DATE,
+	IdP INT (6) UNSIGNED,
+	CONSTRAINT fkidp
+		FOREIGN KEY (IdP) REFERENCES pengajar(IdP)
+);
+
+CREATE TABLE nilai (
+	IdN INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	jumlah_nilai INT (6),
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT fkidc
+		FOREIGN KEY (IdC) REFERENCES course(IdC)
+);
+
+CREATE TABLE nilai_member (
+	IdM INT (6) UNSIGNED,
+	IdN INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyidm
+		FOREIGN KEY (IdM) REFERENCES Member(IdM),
+	CONSTRAINT foreignkeyidn
+		FOREIGN KEY (IdN) REFERENCES nilai(IdN)
+);
+
+
+CREATE TABLE course_enrollment (
+	IdE INT (6) UNSIGNED,
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyide
+		FOREIGN KEY (IdE) REFERENCES enrollment(IdE),
+	CONSTRAINT foreignkeyidc
+		FOREIGN KEY (IdC) REFERENCES course(IdC)
+);
+
+CREATE TABLE isi_course (
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT fk_idc
+		FOREIGN KEY (IdC) REFERENCES course(IdC),
+	IdMod INT (6) UNSIGNED,
+	id_ujian INT (6) UNSIGNED
+);
+
+CREATE TABLE admin (
+	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY 
+);
 
 
 
