@@ -177,13 +177,13 @@ body{
     background-color: lightgreen;
 }
 
-<<<<<<< Updated upstream
 .indextext{
     display: flex;
     justify-content: center;
     margin-bottom: 0.1em;
-=======
 /*SignIn*/
+}
+
 #checker1, #checker2{
     display:none;
     height:20px;
@@ -192,5 +192,4 @@ body{
 }
 .JudulForm{
     justify-content: center;
->>>>>>> Stashed changes
 }
