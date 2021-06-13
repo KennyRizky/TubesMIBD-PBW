@@ -42,8 +42,8 @@
 
         <div class="person">
             <img class="imageperson" src="view/css/person3.jpeg">
-            <h3>Paul Patrick</h3>
-            <p>Chef, Australia</p>
+            <h3>Rahul Mahesh</h3>
+            <p>Chef, India</p>
             <p class="testitext">
             "StudyHub has a lot to offer. It has something for everybody, it's amazing!"
             </p>
