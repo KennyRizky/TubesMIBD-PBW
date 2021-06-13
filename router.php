@@ -14,6 +14,11 @@
                 $indexCtrl = new IndexController();
                 echo $indexCtrl->view_company_profile();
                 break;
+            case $baseURL.'/signin';
+                require_once "controller/signInController.php";
+                $indexCtrl = new signInController();
+                echo $indexCtrl->view_signIn();
+                break;
             default:
                 echo '404 Not Found';
                 break;
