@@ -19,6 +19,11 @@
                 $indexCtrl = new signInController();
                 echo $indexCtrl->view_signIn();
                 break;
+            case $baseURL.'/register';
+                require_once "controller/registerController.php";
+                $indexCtrl = new registerController();
+                echo $indexCtrl->view_register();
+                break;
             default:
                 echo '404 Not Found';
                 break;

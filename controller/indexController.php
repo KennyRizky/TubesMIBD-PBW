@@ -16,6 +16,8 @@ class IndexController{
     public function view_company_profile(){
         return View::createView('companyprofile.php',[]);
     }
+
+    
 }
 
 

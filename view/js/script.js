@@ -34,3 +34,16 @@ function vPass(){
     document.getElementById('checker2').style.display = "none";
     }
 }
+
+function vEmail(){
+    let valueEmail = document.getElementById('email');
+    let mailFormat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+    if(valueEmail.value.match(mailFormat)){
+        document.getElementById('checker0').style.display = "inline";
+        console.log('email benar');
+    }
+    else{
+        document.getElementById('checker0').style.display = "none";
+        console.log('email salah');
+    }
+}
