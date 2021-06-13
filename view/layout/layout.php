@@ -13,7 +13,7 @@
 		<div id="nav">
 			<a class="navbutton" href="index">Home</a>
 			<a class="navbutton" href="courses">Courses</a>
-			<a class="navbutton" href="about">About</a>
+			<a class="navbutton" href="companyprofile">About</a>
 
 			<div id="searchbar">
 				<input id="logosearch" type="text" placeholder="Search..">
