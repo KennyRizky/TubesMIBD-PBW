@@ -9,10 +9,10 @@
         <form action="">
             <fieldset>
                 <label for="uName">Username</label>:
-                <input type="text" id="uName" name="username" onkeyup="vUser()"><img src="css/check.png" id="checker1"><br>
+                <input type="text" id="uName" name="username" onkeyup="vUser()"><img src="css/checker.png" id="checker1"><br>
             
                 <label for="pass">Password</label>:
-                <input type="password" id="pass" name="password" onkeyup="vPass()"><img src="css/check.png" id="checker2"><br>
+                <input type="password" id="pass" name="password" onkeyup="vPass()"><img src="css/checker.png" id="checker2"><br>
 
                 <input type="submit" value="Sign In" id="butSignIn">
             </fieldset>
