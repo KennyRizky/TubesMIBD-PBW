@@ -16,7 +16,39 @@
 </div>
 
 <div id="testimoni">
-    <h1>MEET OUR COMMUNITY</h1>
+    <h1 id="community">MEET OUR COMMUNITY</h1>
+
+    <div class="people">
+        <div class="person">
+            <img class="imageperson" src="view/css/person1.jpeg">
+            <h3>Maria Berliana</h3>
+            <p>Architect, Japan</p>
+            <p class="testitext">
+            "I was very lucky to study with StudyHub.
+            This program totally helped me with my college."
+            </p>
+        </div>
+
+        <div class="person">
+            <img class="imageperson" src="view/css/person2.jpeg">
+            <h3>Johnathan James</h3>
+            <p>Web Developer, USA</p>
+            <p class="testitext">
+            "I started with nothing. With StudyHub, I was able to build 
+            my knowledge to build my career."
+            </p>
+
+        </div>
+
+        <div class="person">
+            <img class="imageperson" src="view/css/person3.jpeg">
+            <h3>Paul Patrick</h3>
+            <p>Chef, Australia</p>
+            <p class="testitext">
+            "StudyHub has a lot to offer. It has something for everybody, it's amazing!"
+            </p>
+        </div>
+    </div>
 </div>
 
 <div id="info">

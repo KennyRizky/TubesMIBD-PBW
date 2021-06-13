@@ -183,6 +183,51 @@ body{
     margin-bottom: 0.1em;
 }
 
+#testimoni{
+    background-color: white;
+    height: 600px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#community{
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    font-size: 60px;
+}
+
+.person{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageperson{
+    max-width:70%;
+    max-height:100%;
+    object-fit: cover;
+    border-radius: 1em;
+
+}
+
+.testitext{
+    width: 50%;
+    text-align: center;
+}
+
+.people{
+    display: flex;
+    justify-content: space-between;
+}
+
 /*SignIn*/
 
 #checker1, #checker2{
