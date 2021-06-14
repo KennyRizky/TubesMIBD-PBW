@@ -12,9 +12,9 @@
                 <option value ="member">Member</option>
                 <option value ="teacher">Teacher</option>
             </select>
-            <input type="text" id="email" name="email" onkeyup="vEmail()" placeholder="email"><img src="css/checker.png" id="checker0"><br>   
-            <input type="text" id="uName" name="username" onkeyup="vUser()" placeholder="username"><img src="css/checker.png" id="checker1"><br>
-            <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="css/checker.png" id="checker2"><br>
+            <input type="text" id="email" name="email" onkeyup="vEmail()" placeholder="email"><img src="css/check.png" id="checker0"><br>   
+            <input type="text" id="uName" name="username" onkeyup="vUser()" placeholder="username"><img src="css/check.png" id="checker1"><br>
+            <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="css/check.png" id="checker2"><br>
             <input type="date" id="birthDate", name="birthDate">
         </div>
         <div id ="startBtn">
