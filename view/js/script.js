@@ -50,9 +50,3 @@ function vEmail(){
 
 
 
-document.getElementById("role").addEventListener('change',teacher());
-
-function teacher(){
-    let ijazah = document.getElementById('ijazah');
-    ijazah.type = 'file';
-}
