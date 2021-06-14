@@ -16,6 +16,17 @@ class registerController{
     public function view_registerTeacher(){
         return View::createView('registerTeacher.php',[]);
     }
+
+    public function add_accountMember(){
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $birthDate = $_POST['birthDate'];
+        $alamat = $_POST['alamat'];
+
+        $query = "INSERT INTO Member (IdM, nama, pass, tgllahir, alamat, email, wallet) VALUES (DEFAULT, '$username', '$password', '$birthDate' ,'$alamat', '$email', 0)";
+        $this->db->executeNonSelectQuery($query);
+    }
 }
 
 

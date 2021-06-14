@@ -1,6 +1,8 @@
 CREATE TABLE Member(
 	IdM INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
 	nama VARCHAR (50),
+	pass VARCHAR (50),
+	tgllahir DATE,
 	alamat VARCHAR (100),
 	email VARCHAR (50),
 	wallet decimal(15,2)

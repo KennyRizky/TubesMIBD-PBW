@@ -6,11 +6,12 @@
 <body>
     <div id="kotakForm">
         <h1 class="JudulForm">Register</h1>
-        <form action="">
+        <form action="submitRegister" method="POST">
         <div id= "formSignIn">
-            <input type="text" id="email" name="email" onkeyup="vEmail()" placeholder="email"><img src="view/css/check.png" id="checker0"><br>   
-            <input type="text" id="uName" name="username" onkeyup="vUser()" placeholder="username"><img src="view/css/check.png" id="checker1"><br>
-            <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="view/css/check.png" id="checker2"><br>
+            <input type="text" id="email" name="email" placeholder="email"><br>
+            <input type="text" id="uName" name="username" placeholder="username"><br>
+            <input type="password" id="pass" name="password" placeholder="password"><br>
+            <input type="text" id="alamat" name="alamat" placeholder="alamat"><br>
             <input type="date" id="birthDate", name="birthDate"><br>
             
         </div>

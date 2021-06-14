@@ -35,6 +35,12 @@
         }
     }else if($_SERVER["REQUEST_METHOD"] == "POST"){
         switch($url){
+            case $baseURL.'/submitRegister';
+                require_once "controller/registerController.php";
+                $indexCtrl = new registerController();
+                echo $indexCtrl->add_accountMember();
+                header('Location: index');
+                break;
             default:
                 echo '404 Not Found';
                 break;
