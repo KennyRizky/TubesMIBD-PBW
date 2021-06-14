@@ -12,14 +12,12 @@
             <input type="text" id="uName" name="username" onkeyup="vUser()" placeholder="username"><img src="view/css/check.png" id="checker1"><br>
             <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="view/css/check.png" id="checker2"><br>
             <input type="date" id="birthDate", name="birthDate"><br>
-            
-            
+            <input type="file" id="ijazah" name="Ijazah">
         </div>
         <div id ="startBtn">
             <input type="submit" value="register" id="butSignIn">
         </div>
         </form>
         <p>Already have an Account? <a href="signin">Sign in</a></p>
-        <p>Are you a teacher? <a href="registerTeacher">Register as Teacher</a></p>
     </div>
 </body>

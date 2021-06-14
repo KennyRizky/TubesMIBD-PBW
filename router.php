@@ -24,6 +24,11 @@
                 $indexCtrl = new registerController();
                 echo $indexCtrl->view_register();
                 break;
+            case $baseURL.'/registerTeacher';
+                require_once "controller/registerController.php";
+                $indexCtrl = new registerController();
+                echo $indexCtrl->view_registerTeacher();
+                break;
             default:
                 echo '404 Not Found';
                 break;

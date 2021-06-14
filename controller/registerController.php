@@ -13,6 +13,9 @@ class registerController{
         return View::createView('register.php',[]);
     }
 
+    public function view_registerTeacher(){
+        return View::createView('registerTeacher.php',[]);
+    }
 }
 
 
