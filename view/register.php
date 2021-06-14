@@ -13,7 +13,6 @@
             <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="view/css/check.png" id="checker2"><br>
             <input type="date" id="birthDate", name="birthDate"><br>
             
-            
         </div>
         <div id ="startBtn">
             <input type="submit" value="register" id="butSignIn">
