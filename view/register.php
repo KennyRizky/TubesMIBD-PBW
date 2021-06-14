@@ -15,7 +15,8 @@
             <input type="text" id="email" name="email" onkeyup="vEmail()" placeholder="email"><img src="view/css/check.png" id="checker0"><br>   
             <input type="text" id="uName" name="username" onkeyup="vUser()" placeholder="username"><img src="view/css/check.png" id="checker1"><br>
             <input type="password" id="pass" name="password" onkeyup="vPass()" placeholder="password"><img src="view/css/check.png" id="checker2"><br>
-            <input type="date" id="birthDate", name="birthDate"><br>
+            <input type="date" id="birthDate", name="birthDate">
+            <p>Masukkan Ijazah: </p>
             <input type="file" id="ijazah" name="Ijazah">
         </div>
         <div id ="startBtn">
