@@ -54,20 +54,14 @@ VALIDASI FORM
 -------------
 */
 
-let Vuser = false;
-let Vpass = false;
-
 //menampilkan gambar centang untuk username dan mengecek validity username
 function checkVuser() {
     let x = document.getElementById("uName").value;
     console.log(x);
     if(x.length >= 8){
-        console.log('berhasil');
         document.getElementById("centang1").style.display = "block";
-        Vuser = true;
     }else{
         document.getElementById("centang1").style.display = "none";
-        Vuser = false;
     }
 }
 
@@ -76,10 +70,8 @@ function checkVpass() {
     var x = document.getElementById("pass").value;
     if(x.length >= 8){
         document.getElementById("centang2").style.display = "block";
-        Vpass = true;
     }else{
         document.getElementById("centang2").style.display = "none";
-        Vpass = false;
     }
 }	
 
