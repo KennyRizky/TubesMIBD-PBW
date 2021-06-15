@@ -171,8 +171,8 @@ body{
     background-color: orange;
 }
 #startBtn{
-    display: flex;
-   justify-content: center;
+    display: none;
+    justify-content: center;
 }
 #Btn{
     width: 255px;
@@ -262,7 +262,7 @@ body{
 }
 #formSignIn{
     display: grid;
-   justify-content: center;
+    justify-content: center;
 }
 
 #butSignIn{
@@ -280,3 +280,17 @@ body{
     margin-bottom: 20px;
 }
 
+#centang1{
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+    display: none;
+}
+
+
+#centang2{
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+    display: none;
+}
