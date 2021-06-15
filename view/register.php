@@ -1,13 +1,28 @@
     <div id="kotakForm">
         <h1 class="JudulForm">Register</h1>
-        <form action="submitRegister" method="POST">
-            <div id= "formSignIn">
-                <input type="text" id="email" name="email" placeholder="email">
-                <input type="text" id="uName" name="username" placeholder="username" oninput="checkVuser();"><img src = "view/css/check.png" id="centang1">
-                <input type="password" id="pass" name="password" placeholder="password" oninput="checkVpass();"><img src = "view/css/check.png" id="centang2">
-                <input type="text" id="alamat" name="alamat" placeholder="alamat"><br>
-                <input type="date" id="birthDate", name="birthDate"><br>   
-            </div>
+        <form action="submitRegister" method="POST" id="isiform">
+                <div class="flexform">
+                    <input class="registerinput" type="text" id="email" name="email" placeholder="email" oninput="checkVemail(); hide(); checkForValidity();">
+                    <img src = "view/css/check.png" id="centang0">
+                </div>
+
+                <div class="flexform">
+                    <input class="registerinput" type="text" id="uName" name="username" placeholder="username" oninput="checkVuser(); hide(); checkForValidity();">
+                    <img src = "view/css/check.png" id="centang1">
+                </div>
+
+                <div class="flexform">
+                    <input class="registerinput" type="password" id="pass" name="password" placeholder="password" oninput="checkVpass(); hide(); checkForValidity();">
+                    <img src = "view/css/check.png" id="centang2">
+                </div>
+
+                <div class="flexform">
+                    <input class="registerinput" type="text" id="alamat" name="alamat" placeholder="alamat">
+                </div>
+
+                <div class="flexform">
+                    <input class="registerinput" type="date" id="birthDate", name="birthDate">
+                </div> 
 
             <div id ="startBtn">
                 <input type="submit" value="register" id="butSignIn">
