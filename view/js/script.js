@@ -112,3 +112,14 @@ function hide(){
     document.getElementById("startBtn").style.display = "none";
 }
 
+//mengecek validity form, menampilkan tombol signIn
+// function checkForValiditySignIn(){
+//     if(window.Vpass === true && window.Vuser === true){
+//         window.isValid = true;
+//         document.getElementById("startBtnSignIn").style.display = "flex";
+//     }else{
+//         window.isValid = false;
+//         document.getElementById("startBtnSignIn").style.display = "none";
+//     }
+// }
+
