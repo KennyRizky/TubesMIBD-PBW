@@ -41,6 +41,12 @@
                 echo $indexCtrl->add_accountMember();
                 header('Location: index');
                 break;
+            case $baseURL.'/submitRegisterTeacher';
+                require_once "controller/registerController.php";
+                $indexCtrl = new registerController();
+                echo $indexCtrl->add_accountTeacher();
+                header('Location: index');
+                break;
             case $baseURL.'/submitSignIn';
                 require_once "controller/signInController.php";
                 $indexCtrl = new signInController();

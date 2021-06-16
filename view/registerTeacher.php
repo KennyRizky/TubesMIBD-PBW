@@ -6,7 +6,7 @@
 <body>
     <div id="kotakForm">
         <h1 class="JudulForm">Register</h1>
-        <form action="">
+        <form action="submitRegisterTeacher" method ="POST" id = "isiform">
             <div class="flexform">
                 <input class="registerinput" type="text" id="email" name="email" placeholder="email" oninput="checkVemail(); hide(); checkForValidity();">
                 <img src = "view/css/check.png" id="centang0">

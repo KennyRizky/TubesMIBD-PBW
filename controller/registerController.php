@@ -27,6 +27,17 @@ class registerController{
         $query = "INSERT INTO Member (IdM, nama, pass, tgllahir, alamat, email, wallet) VALUES (DEFAULT, '$username', '$password', '$birthDate' ,'$alamat', '$email', 0)";
         $this->db->executeNonSelectQuery($query);
     }
+
+    public function add_accountTeacher(){
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $birthDate = $_POST['birthDate'];
+        $alamat = $_POST['alamat'];
+        $ijazah = $_POST['ijazah'];
+        $query = "INSERT INTO pengajar (IdP, nama, pass, email, ijazah) VALUES (DEFAULT, '$username', '$password', '$email' ,'$ijazah')";
+        $this->db->executeNonSelectQuery($query);
+    }
 }
 
 
