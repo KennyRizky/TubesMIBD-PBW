@@ -23,7 +23,7 @@ class signInController{
         $query = "SELECT *
                     from member
                     where nama = $username && pass = $password
-        )";
+        ";
         $this->db->executeNonSelectQuery($query);
     }
 }
