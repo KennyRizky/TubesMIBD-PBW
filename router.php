@@ -41,6 +41,12 @@
                 echo $indexCtrl->add_accountMember();
                 header('Location: index');
                 break;
+            case $baseURL.'/submitSignIn';
+                require_once "controller/signInController.php";
+                $indexCtrl = new signInController();
+                echo $indexCtrl->check_signIn();
+                header('Location: index');
+                break;
             default:
                 echo '404 Not Found';
                 break;
