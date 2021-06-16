@@ -14,17 +14,19 @@ class signInController{
     }
 
     public function check_signIn(){
-        $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $birthDate = $_POST['birthDate'];
-        $alamat = $_POST['alamat'];
-
         $query = "SELECT *
                     from member
-                    where nama = $username && pass = $password
+                    where nama = '$username' && pass = '$password'
         ";
-        $this->db->executeNonSelectQuery($query);
+        $this->db->executeSelectQuery($query);
+        if($query==null){
+            header('Location: signin');
+        }
+        else{
+            header('Location: index');
+        }
     }
 }
 

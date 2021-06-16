@@ -29,6 +29,11 @@
                 $indexCtrl = new registerController();
                 echo $indexCtrl->view_registerTeacher();
                 break;
+            case $baseURL.'/admin';
+                require_once "controller/adminController.php";
+                $indexCtrl = new adminController();
+                echo $indexCtrl->view_admin();
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -51,7 +56,7 @@
                 require_once "controller/signInController.php";
                 $indexCtrl = new signInController();
                 echo $indexCtrl->check_signIn();
-                header('Location: index');
+                //header('Location: index');
                 break;
             default:
                 echo '404 Not Found';
