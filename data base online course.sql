@@ -49,7 +49,9 @@ CREATE TABLE enrollment_member (
 CREATE TABLE pengajar (
 	IdP INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	nama VARCHAR (50),
-	email VARCHAR (50)
+	pass varchar (50),
+	email VARCHAR (50),
+	ijazah varchar (50)
 );
 
 CREATE TABLE course (
@@ -96,6 +98,20 @@ CREATE TABLE isi_course (
 		FOREIGN KEY (IdC) REFERENCES course(IdC),
 	IdMod INT (6) UNSIGNED,
 	id_ujian INT (6) UNSIGNED
+);
+
+create table modul(
+	IdMod int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
+	isiMod varchar (5000)
+);
+
+create table pertanyaan_ujian(
+	id_pertanyaan int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyujian
+		FOREIGN KEY (IdC) REFERENCES course(IdC),
+	isi_pertanyaan varchar (500),
+	jawaban int (1)
 );
 
 CREATE TABLE admin (
