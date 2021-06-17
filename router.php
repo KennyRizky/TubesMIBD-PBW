@@ -55,8 +55,8 @@
             case $baseURL.'/submitSignIn';
                 require_once "controller/signInController.php";
                 $indexCtrl = new signInController();
-                echo $indexCtrl->check_signIn();
-                //header('Location: index');
+                $indexCtrl->check_signIn();
+                header('Location: signin');
                 break;
             default:
                 echo '404 Not Found';

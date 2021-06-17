@@ -16,17 +16,27 @@ class signInController{
     public function check_signIn(){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT *
+        $query = "SELECT IdM
                     from member
                     where nama = '$username' && pass = '$password'
         ";
-        $this->db->executeSelectQuery($query);
-        if($query==null){
-            header('Location: signin');
+       $query_result = $this->db->executeSelectQuery($query);
+       $result = [];
+        foreach($query_result as $key => $value){
+            if($value['IdM'] !== NULL){
+                echo("SIA BENER");
+            }
+            else{
+                echo("SIA SALAH");
+            }
         }
-        else{
-            header('Location: index');
-        }
+        return $result;
+        // if($query == null){
+        //     header('Location: signin');
+        // }
+        // else{
+        //     header('Location: index');
+        // }
     }
 }
 
