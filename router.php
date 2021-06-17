@@ -34,6 +34,12 @@
                 $indexCtrl = new adminController();
                 echo $indexCtrl->view_admin();
                 break;
+            case $baseURL.'/logout';
+                require_once "controller/logoutController.php";
+                $logoutCtrl = new logoutController();
+                echo $logoutCtrl->logout();
+                header('Location: index');
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -46,6 +52,8 @@
                 echo $indexCtrl->add_accountMember();
                 header('Location: index');
                 break;
+
+            //INI MASIH ADA 2
             case $baseURL.'/submitRegisterTeacher';
                 require_once "controller/registerController.php";
                 $indexCtrl = new registerController();
@@ -56,7 +64,13 @@
                 require_once "controller/signInController.php";
                 $indexCtrl = new signInController();
                 $indexCtrl->check_signIn();
-                header('Location: signin');
+                header('Location: index');
+                break;
+            case $baseURL.'/submitRegisterTeacher';
+                require_once "controller/uploadController.php";
+                $indexCtrl = new uploadController();
+                $indexCtrl->upload();
+                //header('Location: index');
                 break;
             default:
                 echo '404 Not Found';

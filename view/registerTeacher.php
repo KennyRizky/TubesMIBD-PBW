@@ -6,7 +6,7 @@
 <body>
     <div id="kotakForm">
         <h1 class="JudulForm">Register</h1>
-        <form action="submitRegisterTeacher" method ="POST" id = "isiform">
+        <form action="submitRegisterTeacher" method ="POST" id = "isiform" enctype="multipart/form-data">
             <div class="flexform">
                 <input class="registerinput" type="text" id="email" name="email" placeholder="email" oninput="checkVemail(); hide(); checkForValidity();">
                 <img src = "view/css/check.png" id="centang0">
@@ -41,3 +41,20 @@
         <p>Already have an Account? <a href="signin">Sign in</a></p>
     </div>
 </body>
+
+<script>
+	let formData = new FormData();
+	let fileField = document.querySelector("input[type='file']");
+
+	formData.append('extra','abc123');
+	formData.append('ijazah',fileField.files[0]);
+
+	fetch('submitRegisterTeacher', {
+		method: 'POST',
+		body: formData
+	})
+	.then(response => response.json())
+	.catch(error => console.error('Error:',error))
+	.then(response =>
+	console.log('Success:',JSON.stringify(response)));
+</script>

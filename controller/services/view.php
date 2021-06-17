@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class View{
 	public static function createView($view,$param){
 		foreach ($param as $key => $value) {
@@ -12,10 +12,18 @@ class View{
 		ob_end_clean();
 		
 		ob_start();
-		include 'view/layout/layout.php';
-		$include = ob_get_contents();
-		ob_end_clean();
-		return $include;
+		
+		if(isset($_SESSION['username'])){
+			include 'view/layout/layout2.php';
+			$include = ob_get_contents();
+			ob_end_clean();
+			return $include;
+		}else{
+			include 'view/layout/layout.php';
+			$include = ob_get_contents();
+			ob_end_clean();
+			return $include;
+		}
 	}
 }
 ?>

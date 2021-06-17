@@ -9,18 +9,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <?php
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if ($username == $usernamelogin && $password == $passwordlogin) {
-            session_start();
-            $_SESSION['username'] = $username;
-            header("Location: myCourses.php");
-        }
-        else{
-            header("Location: signin.php");
-        }
-    ?>
 	<div id="header">
 
 		<a id="logo" href="index">Study Hub</a>
@@ -37,6 +25,9 @@
 		</div>
 
 		<div id="account">
+			<a class="navbutton" href="logout" onclick="return confirm('Are you sure you want to logout?');">Log Out</a>
+			<a class="navbutton" href="profile"> <?php echo $_SESSION['username']?></a>
+
 
 		</div>
 

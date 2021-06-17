@@ -32,7 +32,7 @@
 
 <div id = "home3">
     <h1 class = "header1">START LEARNING NOW!</h1>
-    <div id ="startBtn">
+    <div id ="startBtn1">
     <input type ="button" name="get-started" value="Get Started" id="Btn">
     </div>
 </div>

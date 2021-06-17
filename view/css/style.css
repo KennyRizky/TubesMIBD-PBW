@@ -175,6 +175,11 @@ body{
     justify-content: center;
 }
 
+#startBtn1{
+    display: flex;
+    justify-content: center;
+}
+
 #startBtnSignIn{
     display: flex;
     justify-content: center;
