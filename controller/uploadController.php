@@ -10,8 +10,9 @@ class uploadController{
     }
     
 	public function upload(){
+		
 		if($_FILES['ijazah']['name'] != ""){
-			$oldname = $_FILES['upfile']['tmp_name'];
+			$oldname = $_FILES['ijazah']['tmp_name'];
 			$newname = dirname(__DIR__) . "/uploads/" .
 						$_FILES['ijazah']['name'];
 			if(move_uploaded_file($oldname, $newname)){

@@ -56,8 +56,11 @@
             //INI MASIH ADA 2
             case $baseURL.'/submitRegisterTeacher';
                 require_once "controller/registerController.php";
-                $indexCtrl = new registerController();
-                echo $indexCtrl->add_accountTeacher();
+                require_once "controller/uploadController.php";
+                // $indexCtrl = new registerController();
+                // echo $indexCtrl->add_accountTeacher();
+                $uploadCtrl = new uploadController();
+                $uploadCtrl->upload();
                 header('Location: index');
                 break;
             case $baseURL.'/submitSignIn';
@@ -68,8 +71,7 @@
                 break;
             case $baseURL.'/submitRegisterTeacher';
                 require_once "controller/uploadController.php";
-                $indexCtrl = new uploadController();
-                $indexCtrl->upload();
+                
                 //header('Location: index');
                 break;
             default:
