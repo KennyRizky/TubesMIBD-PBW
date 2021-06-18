@@ -29,6 +29,15 @@ class profileMemberController{
         }
         return $result;
     }
+
+    public function delete_account(){
+        session_start();
+        $nama = $_SESSION['username'];
+
+        $query = "DELETE FROM Member WHERE nama = '$nama'";
+        $query_result = $this->db->executeNonSelectQuery($query);
+        session_destroy();
+    }
     
 }
 

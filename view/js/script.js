@@ -15,39 +15,6 @@ function showSlides() {
     setTimeout(showSlides, 4000); 
 }
 
-// function vUser(){
-//     let valueUser = document.getElementById('uName');
-//     if(valueUser.value.length >= 8){
-//         document.getElementById('checker1').style.display = "inline";
-//     }
-//     else{
-//         document.getElementById('checker1').style.display = "none";
-//     }
-// }
-    
-// function vPass(){
-//     let valuePassword = document.getElementById('pass');
-//     if(valuePassword.value.length >= 8){
-//     document.getElementById('checker2').style.display = "inline";
-//     }
-//     else{
-//     document.getElementById('checker2').style.display = "none";
-//     }
-// }
-
-// function vEmail(){
-//     let valueEmail = document.getElementById('email');
-//     let mailFormat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-//     if(valueEmail.value.match(mailFormat)){
-//         document.getElementById('checker0').style.display = "inline";
-//         console.log('email benar');
-//     }
-//     else{
-//         document.getElementById('checker0').style.display = "none";
-//         console.log('email salah');
-//     }
-// }
-
 /*
 -------------
 VALIDASI FORM
@@ -112,14 +79,28 @@ function hide(){
     document.getElementById("startBtn").style.display = "none";
 }
 
-//mengecek validity form, menampilkan tombol signIn
-// function checkForValiditySignIn(){
-//     if(window.Vpass === true && window.Vuser === true){
-//         window.isValid = true;
-//         document.getElementById("startBtnSignIn").style.display = "flex";
-//     }else{
-//         window.isValid = false;
-//         document.getElementById("startBtnSignIn").style.display = "none";
-//     }
-// }
+
+
+//----------
+//MASIH ANEH
+//----------
+function checkConfirmPass(){
+    let pass = document.getElementById("pass").value;
+    let email = document.getElementById("email").value;
+    let conpass = document.getElementById("confirmpass").value;
+    if(pass === conpass){
+        document.getElementById("centang1").style.display = "block";
+        document.getElementById("centang2").style.display = "block";
+    }else{
+        document.getElementById("centang1").style.display = "none";
+        document.getElementById("centang2").style.display = "none";
+    }
+
+    if(document.getElementById("centang1").style.display = "block" && document.getElementById("centang2").style.display == "block" && document.getElementById("centang0").style.display == "block"){
+        document.getElementById("saveProfile").style.display = "block";
+    }else{
+        document.getElementById("saveProfile").style.display = "none";
+    }
+
+}
 

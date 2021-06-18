@@ -50,6 +50,17 @@
                 $profileMember = new profileMemberController();
                 echo $profileMember->view_profileMember();
                 break;
+            case $baseURL.'/editProfile';
+                require_once "controller/editProfileController.php";
+                $editProfile = new editProfileController();
+                echo $editProfile->view_editProfile();
+                break;
+            case $baseURL.'/deleteAccount';
+                require_once "controller/profileMemberController.php";
+                $deleteAccount = new profileMemberController();
+                $deleteAccount->delete_account();
+                header('Location: index');
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -79,6 +90,12 @@
                 $signInTeacherCtrl = new signInController();
                 $signInTeacherCtrl->check_signInTeacher();
                 header('Location: index');
+                break;
+            case $baseURL.'/updateProfile';
+                require_once "controller/editProfileController.php";
+                $signInTeacherCtrl = new editProfileController();
+                $signInTeacherCtrl->edit_profile();
+                header('Location: profileMember');
                 break;
             default:
                 echo '404 Not Found';
