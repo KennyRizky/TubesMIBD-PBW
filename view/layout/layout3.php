@@ -15,7 +15,7 @@
 
 		<div id="nav">
 			<a class="navbutton" href="index">Home</a>
-			<a class="navbutton" href="myCourses">Courses</a>
+			<a class="navbutton" href="myCoursesTeacher">Courses</a>
 			<a class="navbutton" href="companyprofile">About</a>
 
 			<div id="searchbar">
@@ -26,7 +26,7 @@
 
 		<div id="account">
 			<a class="navbutton" href="logout" onclick="return confirm('Are you sure you want to logout?');">Log Out</a>
-			<a class="navbutton" href="profileMember"> <?php echo $_SESSION['username']?></a>
+			<a class="navbutton" href="profile"> <?php echo $_SESSION['usernameTeacher']?></a>
 
 
 		</div>

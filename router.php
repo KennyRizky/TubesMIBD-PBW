@@ -40,6 +40,16 @@
                 echo $logoutCtrl->logout();
                 header('Location: index');
                 break;
+            case $baseURL.'/signinTeacher';
+                require_once "controller/signInController.php";
+                $signInTeacherCtrl = new signInController();
+                echo $signInTeacherCtrl->view_signInTeacher();
+                break;
+            case $baseURL.'/profileMember';
+                require_once "controller/profileMemberController.php";
+                $profileMember = new profileMemberController();
+                echo $profileMember->view_profileMember();
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -52,13 +62,8 @@
                 echo $indexCtrl->add_accountMember();
                 header('Location: index');
                 break;
-
-            //INI MASIH ADA 2
             case $baseURL.'/submitRegisterTeacher';
-                require_once "controller/registerController.php";
                 require_once "controller/uploadController.php";
-                // $indexCtrl = new registerController();
-                // echo $indexCtrl->add_accountTeacher();
                 $uploadCtrl = new uploadController();
                 $uploadCtrl->upload();
                 header('Location: index');
@@ -69,10 +74,11 @@
                 $indexCtrl->check_signIn();
                 header('Location: index');
                 break;
-            case $baseURL.'/submitRegisterTeacher';
-                require_once "controller/uploadController.php";
-                
-                //header('Location: index');
+            case $baseURL.'/signinTeacher';
+                require_once "controller/signInController.php";
+                $signInTeacherCtrl = new signInController();
+                $signInTeacherCtrl->check_signInTeacher();
+                header('Location: index');
                 break;
             default:
                 echo '404 Not Found';

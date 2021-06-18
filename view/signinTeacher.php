@@ -6,7 +6,7 @@
 <body>
     <div id="kotakForm">
         <h1 class="JudulForm">Sign In</h1>
-        <form action="submitSignIn" method="POST" id="isiFormSignIn">
+        <form action="signinTeacher" method="POST" id="isiFormSignIn">
                     <div class="flexform">
                         <input class="registerinput" type="text" id="uName" name="username" placeholder="username" oninput="checkVuser(); hide(); checkForValiditySignIn();">
                         <img src = "view/css/check.png" id="centang1">
@@ -20,7 +20,6 @@
                 <input type="submit" value="Sign In" id="butSignIn">
             </div>
         </form>
-        <p>Don't have an account? <a href="register">Register</a></p>
-        <p>Are you a teacher? <a href="signinTeacher">Sign in as Teacher</a></p>
+        <p>Don't have an account? <a href="registerTeacher">Register</a></p>
     </div>
 </body>

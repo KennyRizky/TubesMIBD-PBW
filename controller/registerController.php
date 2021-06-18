@@ -34,8 +34,7 @@ class registerController{
         $password = $_POST['password'];
         $birthDate = $_POST['birthDate'];
         $alamat = $_POST['alamat'];
-        $ijazah = $_POST['ijazah'];
-        $query = "INSERT INTO pengajar (IdP, nama, pass, email, ijazah) VALUES (DEFAULT, '$username', '$password', '$email' ,'$ijazah')";
+        $query = "INSERT INTO pengajar (IdP, nama, pass, email) VALUES (DEFAULT, '$username', '$password', '$email')";
         $this->db->executeNonSelectQuery($query);
     }
 }

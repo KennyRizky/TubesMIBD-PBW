@@ -29,13 +29,30 @@ class signInController{
             }
         }
         return $result;
-        // if($query == null){
-        //     header('Location: signin');
-        // }
-        // else{
-        //     header('Location: index');
-        // }
+        
     }
+
+    public function view_signInTeacher(){
+        return View::createView('signinTeacher.php',[]);
+    }
+
+    public function check_signInTeacher(){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = "SELECT nama
+                    from pengajar
+                    where nama = '$username' && pass = '$password'
+        ";
+       $query_result = $this->db->executeSelectQuery($query);
+       $result = [];
+        foreach($query_result as $key => $value){
+            if($value['nama'] !== NULL){
+                $_SESSION['usernameTeacher'] = $value['nama'];
+            }
+        }
+        return $result;
+    }
+
 }
 
 

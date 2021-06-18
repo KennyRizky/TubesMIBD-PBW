@@ -336,3 +336,14 @@ body{
     display: flex;
     color: #f2f2f2;
 }
+
+#kotakProfile{
+    background-color: orange;
+    color: white;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    
+}

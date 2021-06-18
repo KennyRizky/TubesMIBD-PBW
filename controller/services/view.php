@@ -18,12 +18,22 @@ class View{
 			$include = ob_get_contents();
 			ob_end_clean();
 			return $include;
-		}else{
+		}
+		else if(isset($_SESSION['usernameTeacher'])){
+			include 'view/layout/layout3.php';
+			$include = ob_get_contents();
+			ob_end_clean();
+			return $include;
+		}
+		
+		else{
 			include 'view/layout/layout.php';
 			$include = ob_get_contents();
 			ob_end_clean();
 			return $include;
 		}
+
+		
 	}
 }
 ?>
