@@ -448,6 +448,42 @@ PROFILE MEMBER
     margin-left: 25%;
     display: flex;
     justify-content: center;
-    margin-top: 10%;    
+
+    margin-top: 30px;    
     align-items: center;
+}
+
+#kotakWalletPayment{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 10px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    margin-top: 30px;    
+    align-items: center;
+}
+
+#pilihanPembayaran{
+    width: 250px;
+}
+#nominalPembayaran{
+    width: 250px;
+}
+#payBtn{
+    margin-left: 150px;
+    width: 100px;
+    height: 30px;
+    background-color: lightgreen;
+    color: black;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.paymentMethod{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 60%;
 }

@@ -8,19 +8,31 @@ CREATE TABLE Member(
 	wallet decimal(15,2)
 );
 
+CREATE TABLE kupon (
+	IdK INT (6) UNSIGNED PRIMARY KEY,
+	nominal decimal(15,2)
+);
+INSERT INTO kupon (IdK,nominal)
+	values(1,10000);
+INSERT INTO kupon (IdK,nominal)
+	values(2,50000);
+INSERT INTO kupon (IdK,nominal)
+	values(3,100000);
+
+
 CREATE TABLE Transaksi_kupon (
 	IdTR INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
 	waktu_transaksi DATE,
 	IdM INT (6) UNSIGNED,
 	CONSTRAINT FK_IdM
-		FOREIGN KEY (IdM) REFERENCES Member(IdM)
+		FOREIGN KEY (IdM) REFERENCES Member(IdM),
+	IdK INT (6) UNSIGNED,
+	CONSTRAINT FK_IdK_TR
+		FOREIGN KEY (IdK) REFERENCES kupon(IdK),
+	payment_method varchar (50)
+		
 );
 
-CREATE TABLE kupon (
-	IdK INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	nominal decimal(15,2),
-	kode_kupon VARCHAR (10)
-);
 
 CREATE TABLE Tkupon (
 	IdTR INT (6) UNSIGNED,
@@ -117,7 +129,11 @@ create table pertanyaan_ujian(
 );
 
 CREATE TABLE admin (
-	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY 
+	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	IdTR INT (6) UNSIGNED,
+		CONSTRAINT IdTR
+			FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
+	IdTR_validasi int (1)
 );
 
 

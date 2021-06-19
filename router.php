@@ -102,6 +102,12 @@
                 $signInTeacherCtrl->edit_profile();
                 header('Location: profileMember');
                 break;
+            case $baseURL.'/buyCredit';
+                require_once "controller/walletController.php";
+                $buyCredit = new walletController();
+                $buyCredit->add_transaksiKupon();
+                header('Location: buyCredit');
+                break;
             default:
                 echo '404 Not Found';
                 break;
