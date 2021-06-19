@@ -61,6 +61,11 @@
                 $deleteAccount->delete_account();
                 header('Location: index');
                 break;
+            case $baseURL.'/buyCredit';
+                require_once "controller/walletController.php";
+                $addWallet = new walletController();
+                echo $addWallet->view_wallet();
+                break;
             default:
                 echo '404 Not Found';
                 break;

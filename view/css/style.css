@@ -438,3 +438,16 @@ PROFILE MEMBER
     border-radius: 3px;
 
 }
+
+/*WALLET*/
+#kotakWalletStatus{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;    
+    align-items: center;
+}
