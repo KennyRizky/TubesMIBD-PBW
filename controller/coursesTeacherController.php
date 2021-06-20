@@ -13,6 +13,10 @@ class coursesTeacherController{
         return View::createView('myCoursesTeacher.php',[]);
     }
 
+    public function view_add_courses(){
+        return View::createView('addCoursesTeacher.php',[]);
+    }
+
     
 }
 

@@ -71,6 +71,11 @@
                 $viewCoursesTeacher = new coursesTeacherController();
                 echo $viewCoursesTeacher->view_coursesTeacher();
                 break;
+            case $baseURL.'/addCoursesTeacher';
+                require_once "controller/coursesTeacherController.php";
+                $viewCoursesTeacher = new coursesTeacherController();
+                echo $viewCoursesTeacher->view_add_courses();
+                break;
             default:
                 echo '404 Not Found';
                 break;

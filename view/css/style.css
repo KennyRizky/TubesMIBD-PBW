@@ -488,7 +488,84 @@ PROFILE MEMBER
     grid-template-columns: 20% 60%;
 }
 
-/*Courses Teacher*/
+/*-------------
+My Courses
+--------------*/
+
+
 #JudulTeacher{
     color: white;
+    margin: 15px;
+    margin-top: 100px;
 }
+
+#kotakCourses{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+
+}
+
+.courses{
+    background-color: white;
+    border-radius: 1em;
+    padding: 10px;
+}
+
+.courses p{
+    text-align: justify;
+}
+
+.courses a{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#addCoursesTeacherBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+    float: right;
+}
+
+#addCourseTeacher{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 20px;
+    margin-top: 30px;    
+    align-items: center;
+}
+
+.addCourseInput{
+    width: 500px;
+}
+
+#addCourseTeacherForm{
+    width: 85%;
+}
+
+.addBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+}
+
