@@ -41,6 +41,10 @@ class walletController{
         $query = "INSERT INTO transaksi_kupon (IdTR, waktu_transaksi, IdM, IdK, payment_method) VALUES 
                     (DEFAULT, curdate(), '$IdM', '$amount', '$paymentMethod')";
         $this->db->executeNonSelectQuery($query);
+
+        $queryAdmin = "INSERT INTO admin (idA, IdTR, IdTR_validasi) VALUES (DEFAULT, (SELECT max(Transaksi_kupon.IdTR) FROM Transaksi_kupon), 0)";
+        $this->db->executeNonSelectQuery($queryAdmin);
+        
         
         if($amount == '1'){
             $nominal = 10000;
@@ -51,8 +55,8 @@ class walletController{
         else if($amount == '3'){
             $nominal = 100000;
         }
-        $query2 = "UPDATE Member SET wallet = wallet + $nominal WHERE nama = '$nama'";
-        $this->db->executeNonSelectQuery($query2);
+        // $query2 = "UPDATE Member SET wallet = wallet + $nominal WHERE nama = '$nama'";
+        // $this->db->executeNonSelectQuery($query2);
     }
 }
 ?>

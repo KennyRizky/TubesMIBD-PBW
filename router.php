@@ -118,6 +118,12 @@
                 $buyCredit->add_transaksiKupon();
                 header('Location: buyCredit');
                 break;
+            case $baseURL.'/validateWallet';
+                require_once "controller/adminController.php";
+                $adminCtrl = new adminController();
+                $adminCtrl->validate_wallet();
+                header('Location: admin');
+                break;
             default:
                 echo '404 Not Found';
                 break;
