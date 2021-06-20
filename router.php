@@ -66,6 +66,11 @@
                 $addWallet = new walletController();
                 echo $addWallet->view_wallet();
                 break;
+            case $baseURL.'/myCoursesTeacher';
+                require_once "controller/coursesTeacherController.php";
+                $viewCoursesTeacher = new coursesTeacherController();
+                echo $viewCoursesTeacher->view_coursesTeacher();
+                break;
             default:
                 echo '404 Not Found';
                 break;

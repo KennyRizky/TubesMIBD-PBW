@@ -1,5 +1,9 @@
 <div id="kotakWalletStatus">
-    <h1>WALLET STATUS: Rp.200.000</h1>
+ <?php
+        foreach ($result as $key => $row) {
+            echo "<h1>Wallet Status: IDR ".$row."</h1>"; 
+        }
+    ?>
 </div>
 
 <div id="kotakWalletPayment">
@@ -17,9 +21,9 @@
             <div class="paymentMethod">
                 <p>Amount:</p>
                 <select name ="amount" id="pilihanPembayaran">
-                    <option value="1">10000</option>
-                    <option value="2">50000</option>
-                    <option value="3">100000</option>
+                    <option value="1">IDR 10.000</option>
+                    <option value="2">IDR 50.000</option>
+                    <option value="3">IDR 100.000</option>
                 </select>
                 
                 

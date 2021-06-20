@@ -487,3 +487,8 @@ PROFILE MEMBER
     align-items: center;
     grid-template-columns: 20% 60%;
 }
+
+/*Courses Teacher*/
+#JudulTeacher{
+    color: white;
+}

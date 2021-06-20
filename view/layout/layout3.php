@@ -15,7 +15,7 @@
 
 		<div id="nav">
 			<a class="navbutton" href="index">Home</a>
-			<a class="navbutton" href="myCoursesTeacher">Courses</a>
+			<a class="navbutton" href="myCoursesTeacher">My Courses</a>
 			<a class="navbutton" href="companyprofile">About</a>
 
 			<div id="searchbar">

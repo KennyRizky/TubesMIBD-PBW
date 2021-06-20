@@ -10,7 +10,21 @@ class walletController{
     }
     
 	public function view_wallet(){
-        return View::createView('buyCredit.php',[]);
+        $result = $this->getWallet();
+        return View::createView('buyCredit.php',['result'=>$result]);
+    }
+
+    public function getWallet(){
+        $nama = $_SESSION['username'];
+
+        $query = "SELECT wallet FROM Member WHERE nama = '$nama'";
+        $query_result = $this->db->executeSelectQuery($query);
+        
+        $result = [];
+        foreach($query_result as $key => $value){
+            $result[] = $value['wallet'];
+        }
+        return $result;
     }
     
     public function add_transaksiKupon(){
@@ -23,12 +37,22 @@ class walletController{
             if($value['IdM'] !== NULL){
                 $IdM = $value['IdM'];
             }
-        }
-        
+        }        
         $query = "INSERT INTO transaksi_kupon (IdTR, waktu_transaksi, IdM, IdK, payment_method) VALUES 
                     (DEFAULT, curdate(), '$IdM', '$amount', '$paymentMethod')";
-        
         $this->db->executeNonSelectQuery($query);
+        
+        if($amount == '1'){
+            $nominal = 10000;
+        }
+        else if($amount == '2'){
+            $nominal = 50000;
+        }
+        else if($amount == '3'){
+            $nominal = 100000;
+        }
+        $query2 = "UPDATE Member SET wallet = wallet + $nominal WHERE nama = '$nama'";
+        $this->db->executeNonSelectQuery($query2);
     }
 }
 ?>
