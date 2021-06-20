@@ -10,6 +10,24 @@ class uploadController{
     }
     
 	public function upload(){	
+		$email = $_POST['email'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$birthDate = $_POST['birthDate'];
+		$alamat = $_POST['alamat'];
+		$ijazah = $_POST['username'] . ".jpg";
+
+		$checkQuery = "SELECT nama FROM pengajar WHERE nama = '$username'";
+        $checkQuery_result = $this->db->executeSelectQuery($checkQuery);
+        foreach($checkQuery_result as $key => $value){
+            if($value['nama'] == $username){
+                echo 'That username is already taken';
+                echo '<br>';
+                echo '<a href="registerTeacher">Back</a>';
+                die;
+            }
+        }
+
 		if($_FILES['ijazah']['name'] != ""){
 			$oldname = $_FILES['ijazah']['tmp_name'];
 			$newname = dirname(__DIR__) . "/uploads/ijazah/" 
@@ -19,19 +37,13 @@ class uploadController{
 			
 			}else{
 				echo "Error in uploading";
-				echo $oldname;
+				die;
 
 			}
 		}else{
 			echo "Error: No file uploaded";
 		}
 		
-		$email = $_POST['email'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$birthDate = $_POST['birthDate'];
-		$alamat = $_POST['alamat'];
-		$ijazah = $_POST['username'] . ".jpg";
 		$query = "INSERT INTO pengajar (IdP, nama, pass, email, alamat, tgllahir, ijazah) VALUES (DEFAULT, '$username', '$password', '$email', '$alamat','$birthDate', '$ijazah')";
 		$this->db->executeNonSelectQuery($query);
 		

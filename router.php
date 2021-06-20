@@ -75,7 +75,7 @@
             case $baseURL.'/submitRegister';
                 require_once "controller/registerController.php";
                 $indexCtrl = new registerController();
-                echo $indexCtrl->add_accountMember();
+                $indexCtrl->add_accountMember();
                 header('Location: index');
                 break;
             case $baseURL.'/submitRegisterTeacher';
