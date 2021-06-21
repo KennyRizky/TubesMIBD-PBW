@@ -1,7 +1,7 @@
 <h1 id="JudulTeacher">Add Courses</h1>
 
 <div id="addCourseTeacher">
-    <form id="addCourseTeacherForm">
+    <form action="" id="addCourseTeacherForm">
         <p>Course Title</p>
         <input type="text" name="courseTitle" class="addCourseInput">
 
