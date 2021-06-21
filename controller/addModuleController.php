@@ -2,29 +2,21 @@
 require_once "controller/services/mysqlDB.php";
 require_once "controller/services/view.php";
 
-class coursesTeacherController{
+class addModuleController{
     protected $db;
 
     public function __construct(){
         $this->db = new MySQLDB("localhost","root","","online_course");
     }
 
-    public function view_coursesTeacher(){
-        return View::createView('myCoursesTeacher.php',[]);
+    public function view_addModule(){
+        return View::createView('addModule.php',[]);
     }
 
-    public function view_add_courses(){
-        return View::createView('addCoursesTeacher.php',[]);
-    }
-
-    public function view_coursePage(){
-        return View::createView('coursePage.php',[]);
-    }
-    public function add_Courses(){
-        $judul = $_POST['courseTitle'];
-        $passingGrade = $_POST['passingGrade'];
+    public function addModule(){
+        $judul = $_POST['judulModul'];
+        $modulContent = $_POST['moduleContent'];
         $courseDescription = $_POST['courseDescription'];
-        $hargaCourse = $_POST['harga'];
         $namaPengajar = $_SESSION['usernameTeacher'];
         $queryIdP = "SELECT IdP from pengajar WHERE nama = '$namaPengajar'";
         $query_result = $this->db->executeSelectQuery($queryIdP);
@@ -37,6 +29,7 @@ class coursesTeacherController{
                 VALUES (DEFAULT, '$passingGrade', '$judul','$hargaCourse', NULL, NULL, '$courseDescription', '$resultIdP[0]')
         ";
         $query_result2 = $this->db->executeNonSelectQuery($query);
+    }
     }
     
 }

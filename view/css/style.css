@@ -568,3 +568,93 @@ My Courses
     border-radius: 0.5em;
     margin: 20px;
 }
+/*-------------
+add Module
+--------------*/
+#addModule{
+    color: white;
+}
+#kotak_addModule{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 20px;
+    margin-top: 30px;    
+    align-items: center;
+}
+.addModuleForm{
+    margin-left: 20px;
+    color: black;
+}
+#judulModul{
+    width: 500px;
+}
+#uploadModuleBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+}
+#addExamBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+}
+/*-------------
+add Exam
+--------------*/
+#addExam{
+    color: white;
+}
+#kotak_addExam{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 20px;
+    margin-top: 30px;    
+    align-items: center;
+}
+.addExamForm{
+    margin-left: 20px;
+    color: black;
+}
+#question{
+    width: 500px;
+}
+#uploadExamBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+}
+#addQuestionBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 0.5em;
+    margin: 20px;
+}
+#option{
+    margin-left: 20px;
+    color: black;
+}
+.optionContent{
+    width: 500px;
+    height: 30px;
+}

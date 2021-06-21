@@ -76,6 +76,21 @@
                 $viewCoursesTeacher = new coursesTeacherController();
                 echo $viewCoursesTeacher->view_add_courses();
                 break;
+            case $baseURL.'/addModule';
+                require_once "controller/addModuleController.php";
+                $addModuleTeacher = new addModuleController();
+                echo $addModuleTeacher->view_addModule();
+                break;
+            case $baseURL.'/addExam';
+                require_once "controller/addExamController.php";
+                $addExamTeacher = new addExamController();
+                echo $addExamTeacher->view_addExam();
+                break;
+            case $baseURL.'/coursePage';
+                require_once "controller/coursesTeacherController.php";
+                $coursePageTeacher = new coursesTeacherController();
+                echo $coursePageTeacher->view_coursePage();
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -123,6 +138,12 @@
                 $adminCtrl = new adminController();
                 $adminCtrl->validate_wallet();
                 header('Location: admin');
+                break;
+            case $baseURL.'/addCourseTeacher';
+                require_once "controller/coursesTeacherController.php";
+                $coursesTeacherCtrl = new coursesTeacherController();
+                $coursesTeacherCtrl->add_Courses();
+                header('Location: coursePage');
                 break;
             default:
                 echo '404 Not Found';
