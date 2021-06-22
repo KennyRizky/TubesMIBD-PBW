@@ -108,12 +108,18 @@ CREATE TABLE course_enrollment (
 		FOREIGN KEY (IdC) REFERENCES course(IdC)
 );
 
+CREATE TABLE ujian(
+	id_ujian INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+);
+
 CREATE TABLE isi_course (
 	IdC INT (6) UNSIGNED,
 	CONSTRAINT fk_idc
 		FOREIGN KEY (IdC) REFERENCES course(IdC),
 	IdMod INT (6) UNSIGNED,
-	id_ujian INT (6) UNSIGNED
+	id_ujian INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyUjian
+		FOREIGN KEY (id_ujian) REFERENCES ujian(id_ujian)
 );
 
 create table modul(
@@ -123,16 +129,26 @@ create table modul(
 );
 
 create table pertanyaan_ujian(
-	id_pertanyaan int (6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id_pertanyaan int (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	IdC INT (6) UNSIGNED,
-	CONSTRAINT foreignkeyujian
+	CONSTRAINT foreignkeycourse
 		FOREIGN KEY (IdC) REFERENCES course(IdC),
 	isi_pertanyaan varchar (500),
-	option_pertanyaan varchar(100),
-	jawaban int (1)
-
+	id_ujian INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyujian
+		FOREIGN KEY (id_ujian) REFERENCES ujian(id_ujian)
 );
 
+CREATE TABLE option_ujian(
+	id_option INT (6) unsigned AUTO_INCREMENT PRIMARY KEY,
+	id_pertanyaan INT (6) UNSIGNED,
+		CONSTRAINT foreignkeyIdPertanyaan
+		FOREIGN KEY (id_pertanyaan) REFERENCES pertanyaan_ujian(id_pertanyaan),
+	isi_option VARCHAR (100),
+	jawaban INT (1)
+
+);
+ 
 CREATE TABLE admin (
 	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 	IdTR INT (6) UNSIGNED,

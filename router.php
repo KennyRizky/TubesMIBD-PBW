@@ -151,6 +151,12 @@
                 $addModuleCtrl->addModule();
                 header('Location: coursePage');
                 break;
+            case $baseURL.'/addExam';
+                require_once "controller/addExamController.php";
+                $addExamCtrl = new addExamController();
+                $addExamCtrl->add_Exam();
+                header('Location: coursePage');
+                break;
             default:
                 echo '404 Not Found';
                 break;
