@@ -2,7 +2,7 @@
 
 <div id="kotak_addModule">
 <div>
-    <form action="" method="POST" id="addModule">
+    <form action="addModule" method="POST" id="addModule">
         <p class="addModuleForm">Add Module</p>
         <input type="text" name="judulModul" id="judulModul" class="addModuleForm">
         <p class="addModuleForm">Module Content</p>
@@ -12,4 +12,4 @@
         <a href="addExam" id="addExamBtn">Add Exam</a>
     </form>
 </div>
-</div>
+</div>  

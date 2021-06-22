@@ -118,6 +118,7 @@ CREATE TABLE isi_course (
 
 create table modul(
 	IdMod int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
+	JudulMod varchar (100),
 	isiMod varchar (5000)
 );
 
@@ -137,7 +138,3 @@ CREATE TABLE admin (
 			FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
 	IdTR_validasi int (1)
 );
-
-
-
-

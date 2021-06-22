@@ -145,6 +145,12 @@
                 $coursesTeacherCtrl->add_Courses();
                 header('Location: coursePage');
                 break;
+            case $baseURL.'/addModule';
+                require_once "controller/addModuleController.php";
+                $addModuleCtrl = new addModuleController();
+                $addModuleCtrl->addModule();
+                header('Location: coursePage');
+                break;
             default:
                 echo '404 Not Found';
                 break;

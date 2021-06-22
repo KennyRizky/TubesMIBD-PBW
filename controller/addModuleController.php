@@ -14,24 +14,32 @@ class addModuleController{
     }
 
     public function addModule(){
-        $judul = $_POST['judulModul'];
-        $modulContent = $_POST['moduleContent'];
-        $courseDescription = $_POST['courseDescription'];
-        $namaPengajar = $_SESSION['usernameTeacher'];
-        $queryIdP = "SELECT IdP from pengajar WHERE nama = '$namaPengajar'";
-        $query_result = $this->db->executeSelectQuery($queryIdP);
-        $resultIdP = [];
-        foreach($query_result as $key => $value){
-            $resultIdP[] = $value['IdP'];
+        $judulModul = $_POST['judulModul'];
+        $moduleContent = $_POST['moduleContent'];
+
+        $query = "INSERT INTO modul VALUES (DEFAULT, '$judulModul', '$moduleContent')";
+        $query_result = $this->db->executeNonSelectQuery($query);
+
+        $queryIdMod = "SELECT IdMod FROM modul WHERE IdMod = (SELECT max(IdMod) FROM modul)";
+        $query_resultIdMod = $this->db->executeSelectQuery($queryIdMod);
+        $resultIdMod = [];
+        foreach($query_resultIdMod as $key => $value){
+            $resultIdMod[] = $value['IdMod'];
         }
 
-        $query= "INSERT INTO course (IdC, batas_nilai, judulCourse, hargaCourse, IdS, waktu_terbit_sertif, courseDesc, IdP)
-                VALUES (DEFAULT, '$passingGrade', '$judul','$hargaCourse', NULL, NULL, '$courseDescription', '$resultIdP[0]')
-        ";
-        $query_result2 = $this->db->executeNonSelectQuery($query);
-    }
+        $queryIdC = "SELECT IdC FROM course WHERE IdC = (SELECT max(IdC) FROM course)";
+        $query_resultIdC = $this->db->executeSelectQuery($queryIdC);
+        $resultIdC = [];
+        foreach($query_resultIdC as $key => $value){
+            $resultIdC[] = $value['IdC'];
+        }
+
+
+        $query2 = "INSERT INTO isi_course VALUES ('$resultIdC[0]', '$resultIdMod[0]', NULL)";
+        $query_result2 = $this->db->executeNonSelectQuery($query2);
     }
     
+
 }
 
 
