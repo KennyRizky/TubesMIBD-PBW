@@ -50,7 +50,6 @@ class coursesTeacherController{
 
     }
 
-
     public function add_Courses(){
         $judul = $_POST['courseTitle'];
         $passingGrade = $_POST['passingGrade'];

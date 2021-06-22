@@ -123,12 +123,14 @@ create table modul(
 );
 
 create table pertanyaan_ujian(
-	id_pertanyaan int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
+	id_pertanyaan int (6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	IdC INT (6) UNSIGNED,
 	CONSTRAINT foreignkeyujian
 		FOREIGN KEY (IdC) REFERENCES course(IdC),
 	isi_pertanyaan varchar (500),
+	option_pertanyaan varchar(100),
 	jawaban int (1)
+
 );
 
 CREATE TABLE admin (
