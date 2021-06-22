@@ -109,7 +109,11 @@ class addExamController{
             $queryOption4  = "INSERT INTO option_ujian(id_option, id_pertanyaan, isi_option, jawaban)
             VALUES (DEFAULT, '$resultIdPertanyaan[0]', '$pilihanD', '1')";
             $query_Option4 = $this->db->executeSelectQuery($queryOption4);
-        }             
+        } 
+        
+        
+        $query2 = "INSERT INTO isi_courseUjian VALUES ('$resultIdC[0]', '$resultIdC[0]')";
+        $query_result2 = $this->db->executeNonSelectQuery($query2);
     }
     
 }

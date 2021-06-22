@@ -112,20 +112,28 @@ CREATE TABLE ujian(
 	id_ujian INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY
 );
 
-CREATE TABLE isi_course (
-	IdC INT (6) UNSIGNED,
-	CONSTRAINT fk_idc
-		FOREIGN KEY (IdC) REFERENCES course(IdC),
-	IdMod INT (6) UNSIGNED,
-	id_ujian INT (6) UNSIGNED,
-	CONSTRAINT foreignkeyUjian
-		FOREIGN KEY (id_ujian) REFERENCES ujian(id_ujian)
-);
-
 create table modul(
 	IdMod int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
 	JudulMod varchar (100),
 	isiMod varchar (5000)
+);
+
+CREATE TABLE isi_courseMod (
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT fk_idc
+		FOREIGN KEY (IdC) REFERENCES course(IdC),
+	IdMod INT (6) UNSIGNED,
+	CONSTRAINT fk_idmod
+		FOREIGN KEY (IdMod) REFERENCES modul(IdMod)
+);
+
+CREATE TABLE isi_courseUjian(
+	IdC INT (6) UNSIGNED,
+	CONSTRAINT fk_idcourse
+		FOREIGN KEY (IdC) REFERENCES course(IdC),
+	id_ujian INT (6) UNSIGNED,
+	CONSTRAINT foreignkeyUjian
+		FOREIGN KEY (id_ujian) REFERENCES ujian(id_ujian)
 );
 
 create table pertanyaan_ujian(

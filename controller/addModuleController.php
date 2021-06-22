@@ -35,7 +35,7 @@ class addModuleController{
         }
 
 
-        $query2 = "INSERT INTO isi_course VALUES ('$resultIdC[0]', '$resultIdMod[0]', '$resultIdC[0]')";
+        $query2 = "INSERT INTO isi_courseMod VALUES ('$resultIdC[0]', '$resultIdMod[0]')";
         $query_result2 = $this->db->executeNonSelectQuery($query2);
     }
     

@@ -47,3 +47,34 @@
 
     echo "</div>";
 ?>
+
+<?php
+    echo "<div id='addCourseTeacher'>";
+    $counter = 0;
+    foreach($resultExam as $key => $row){
+        if($row->getjawaban() == 1){
+            $counter++;
+        }
+    }
+
+    for($i = 0; $i < $counter; $i++){
+        echo "<h2>Exam Question: " .$resultExam[$i * 4]->getisi_pertanyaan() ."</h2>";
+        echo "<h2>Exam Option:</h2>";
+
+        for($j = $i * 4; $j < ($i + 1) * 4; $j++){
+            if($resultExam[$j]->getjawaban() == 1){
+                echo "<p>" .$resultExam[$j]->getoption_pertanyaan() ." (Correct)</p>";
+            }else{
+                echo "<p>" .$resultExam[$j]->getoption_pertanyaan() ."</p>";
+
+            }
+        }
+
+        
+        echo "<hr>";
+
+    } 
+
+
+    echo "</div>";
+?>

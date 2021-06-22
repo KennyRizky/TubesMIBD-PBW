@@ -7,7 +7,7 @@ class Exam{
 	protected $option_pertanyaan;
     protected $jawaban;
 
-	public function __construct($IdC,$batas_nilai,$judulCourse,$hargaCourse,$IdS,$waktu_terbit_sertif,$courseDesc,$IdP){
+	public function __construct($id_pertanyaan, $IdC, $isi_pertanyaan, $option_pertanyaan, $jawaban){
         $this->id_pertanyaan = $id_pertanyaan;
         $this->IdC = $IdC;
         $this->isi_pertanyaan = $isi_pertanyaan;

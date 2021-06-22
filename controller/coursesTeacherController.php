@@ -3,7 +3,7 @@ require_once "controller/services/mysqlDB.php";
 require_once "controller/services/view.php";
 require_once "model/Course.php";
 require_once "model/Module.php";
-
+require_once "model/Exam.php";
 
 class coursesTeacherController{
     protected $db;
@@ -23,9 +23,13 @@ class coursesTeacherController{
     public function view_coursePage(){
         $result = $this->getCourse();
         $resultModule = $this->getAllModule();
+        $resultExam = $this->getAllExam();
+
         return View::createView('coursePage.php',[
             'result'=>$result,
-            'resultModule'=>$resultModule
+            'resultModule'=>$resultModule,
+            'resultExam'=>$resultExam
+
         ]);
     }
 
@@ -40,7 +44,7 @@ class coursesTeacherController{
     }
 
     public function getAllModule(){
-        $queryModule =  "SELECT * FROM modul INNER JOIN isi_course ON modul.IdMod = isi_course.IdMod WHERE (isi_course.IdC = (SELECT max(isi_course.IdC) FROM isi_course))";        
+        $queryModule =  "SELECT * FROM modul INNER JOIN isi_courseMod ON modul.IdMod = isi_courseMod.IdMod WHERE (isi_courseMod.IdC = (SELECT max(isi_courseMod.IdC) FROM isi_courseMod))";        
         $query_result = $this->db->executeSelectQuery($queryModule);
         $resultModule = [];
         foreach($query_result as $key => $value){
@@ -51,7 +55,13 @@ class coursesTeacherController{
     }
 
     public function getAllExam(){
-        
+        $queryExam =  "SELECT DISTINCT isi_courseUjian.IdC, pertanyaan_ujian.id_pertanyaan, pertanyaan_ujian.isi_pertanyaan, option_ujian.isi_option, option_ujian.jawaban FROM isi_courseUjian INNER JOIN pertanyaan_ujian ON isi_courseUjian.IdC = pertanyaan_ujian.IdC INNER JOIN option_ujian ON option_ujian.id_pertanyaan = pertanyaan_ujian.id_pertanyaan";        
+        $query_result = $this->db->executeSelectQuery($queryExam);
+        $resultExam = [];
+        foreach($query_result as $key => $value){
+            $resultExam[] = new Exam($value['id_pertanyaan'], $value['IdC'], $value['isi_pertanyaan'], $value['isi_option'], $value['jawaban']);
+        }
+        return $resultExam;
     }
 
     public function add_Courses(){
