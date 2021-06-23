@@ -7,7 +7,11 @@
         echo '<div class="courses">';  
         echo "<h2>" . $row->getJudulCourse() . "</h2>";
         echo "<p>" .$row->getCourseDesc() . "</p>";
-        echo '<a href="">See More</a>';
+        echo "<form method='POST' action='seeMore'>";
+            echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
+            echo '<input type="submit" value="See More">';
+        echo "</form>";
+
         echo "</div>";   
     }
        

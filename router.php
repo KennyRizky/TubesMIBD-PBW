@@ -91,6 +91,16 @@
                 $coursePageTeacher = new coursesTeacherController();
                 echo $coursePageTeacher->view_coursePage();
                 break;
+            case $baseURL.'/coursePage2';
+                require_once "controller/coursesTeacherController.php";
+                $coursePageTeacher = new coursesTeacherController();
+                echo $coursePageTeacher->view_coursePage2();
+                break;
+            case $baseURL.'/coursePage3';
+                require_once "controller/coursesTeacherController.php";
+                $coursePageTeacher = new coursesTeacherController();
+                echo $coursePageTeacher->view_coursePage3();
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -145,17 +155,28 @@
                 $coursesTeacherCtrl->add_Courses();
                 header('Location: coursePage');
                 break;
+            case $baseURL.'/addCourseTeacher2';
+                require_once "controller/coursesTeacherController.php";
+                $coursesTeacherCtrl = new coursesTeacherController();
+                $coursesTeacherCtrl->add_Courses();
+                header('Location: coursePage2');
+                break;
             case $baseURL.'/addModule';
                 require_once "controller/addModuleController.php";
                 $addModuleCtrl = new addModuleController();
                 $addModuleCtrl->addModule();
-                header('Location: coursePage');
+                header('Location: coursePage3');
                 break;
             case $baseURL.'/addExam';
                 require_once "controller/addExamController.php";
                 $addExamCtrl = new addExamController();
                 $addExamCtrl->add_Exam();
                 header('Location: coursePage');
+                break;
+            case $baseURL.'/seeMore';
+                require_once "controller/seeMoreController.php";
+                $seeMore = new seeMoreController();
+                echo $seeMore->view_coursePage();
                 break;
             default:
                 echo '404 Not Found';

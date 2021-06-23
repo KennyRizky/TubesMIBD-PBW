@@ -658,3 +658,26 @@ add Exam
     width: 500px;
     height: 30px;
 }
+
+
+#addCourseTeacherM{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 20px;
+    margin-top: 80px;    
+    align-items: center;
+}
+
+#addCourseTeacherE{
+    background-color: orange;
+    color: black;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 25%;
+    padding: 20px;
+    margin-top: 80px;    
+    align-items: center;
+}

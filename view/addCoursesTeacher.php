@@ -1,7 +1,7 @@
 <h1 id="JudulTeacher">Add Courses</h1>
 
 <div id="addCourseTeacher">
-    <form action="addCourseTeacher" id="addCourseTeacherForm" method="POST">
+    <form action="addCourseTeacher2" id="addCourseTeacherForm" method="POST">
         <p>Course Title</p>
         <input type="text" name="courseTitle" class="addCourseInput">
 
@@ -17,7 +17,4 @@
         <input type="submit" name="addCourse" value="Upload Course">
     </form>
     <br>
-    <a href="addModule" class="addBtn">Add Module</a>
-    <a href="addExam" class="addBtn">Add Exam</a>
-
 </div>
