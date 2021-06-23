@@ -13,7 +13,8 @@ class coursesTeacherController{
     }
 
     public function view_coursesTeacher(){
-        return View::createView('myCoursesTeacher.php',[]);
+        $resultCourseTitle = $this->getAllCourse();
+        return View::createView('myCoursesTeacher.php',['result'=>$resultCourseTitle]);
     }
 
     public function view_add_courses(){
@@ -31,6 +32,17 @@ class coursesTeacherController{
             'resultExam'=>$resultExam
 
         ]);
+    }
+
+    public function getAllCourse(){
+        $namaIdP = $_SESSION['usernameTeacher'];
+        $query = "SELECT * FROM course INNER JOIN pengajar on course.IdP = pengajar.IdP where pengajar.nama = '$namaIdP'";
+        $query_result = $this->db->executeSelectQuery($query);
+        $result = [];
+        foreach($query_result as $key => $value){
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+        }
+        return $result;
     }
 
     public function getCourse(){
