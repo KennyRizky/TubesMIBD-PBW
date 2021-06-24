@@ -686,10 +686,9 @@ add Exam
 #orderSummary{
     background-color: orange;
     color: black;
-    width: 1000px;
+    width: 60%;
     border-radius: 15px;
-    margin-left: 40%;
+    margin-left: 20%;
     padding: 20px;
     margin-top: 80px;    
-    align-items: center;
 }

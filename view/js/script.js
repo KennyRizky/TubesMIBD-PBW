@@ -103,3 +103,16 @@ function checkConfirmPass(){
     }
 
 }
+
+function checkBalance(){
+    console.log('test');
+    let price = document.getElementById('price').value;
+    let balance = document.getElementById('balance').value;
+
+    if(balance < price){
+        document.getElementById('enrollNow').style.display = none;
+    }else{
+        document.getElementById('enrollNow').style.display = block;
+    }
+}
+checkBalance();
