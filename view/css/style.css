@@ -681,3 +681,14 @@ add Exam
     margin-top: 80px;    
     align-items: center;
 }
+
+#orderSummary{
+    background-color: orange;
+    color: black;
+    width: 1000px;
+    border-radius: 15px;
+    margin-left: 40%;
+    padding: 20px;
+    margin-top: 80px;    
+    align-items: center;
+}

@@ -101,6 +101,16 @@
                 $coursePageTeacher = new coursesTeacherController();
                 echo $coursePageTeacher->view_coursePage3();
                 break;
+            case $baseURL.'/courses';
+                require_once "controller/coursesMemberController.php";
+                $courses = new coursesMemberController();
+                echo $courses->view_courses();
+                break;
+                case $baseURL.'/myCourses';
+                require_once "controller/coursesMemberController.php";
+                $myCourses = new coursesMemberController();
+                echo $myCourses->view_enrolledCourses();
+                break;
             default:
                 echo '404 Not Found';
                 break;
@@ -177,6 +187,17 @@
                 require_once "controller/seeMoreController.php";
                 $seeMore = new seeMoreController();
                 echo $seeMore->view_coursePage();
+                break;
+            case $baseURL.'/orderSummary';
+                require_once "controller/orderSummaryController.php";
+                $orderSummary = new orderSummaryController();
+                echo $orderSummary->view_orderSummary();
+                break;
+            case $baseURL.'/enroll';
+                require_once "controller/enrollController.php";
+                $enroll = new enrollController();
+                echo $enroll->enroll();
+                header('Location: myCourse');
                 break;
             default:
                 echo '404 Not Found';

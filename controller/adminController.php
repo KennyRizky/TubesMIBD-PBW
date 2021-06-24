@@ -2,6 +2,7 @@
 require_once "controller/services/mysqlDB.php";
 require_once "controller/services/view.php";
 require_once "model/validateWallet.php";
+require_once "model/validateEnrollment.php";
 
 
 class adminController{

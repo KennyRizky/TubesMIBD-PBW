@@ -55,8 +55,7 @@ class walletController{
         else if($amount == '3'){
             $nominal = 100000;
         }
-        // $query2 = "UPDATE Member SET wallet = wallet + $nominal WHERE nama = '$nama'";
-        // $this->db->executeNonSelectQuery($query2);
+        
     }
 }
 ?>
