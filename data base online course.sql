@@ -5,7 +5,7 @@ CREATE TABLE Member(
 	tgllahir DATE,
 	alamat VARCHAR (100),
 	email VARCHAR (50),
-	wallet decimal(15,2)
+	wallet INT(20)
 );
 
 CREATE TABLE kupon (

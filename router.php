@@ -199,6 +199,11 @@
                 $enroll->add_enroll();
                 header('Location: myCourses');
                 break;
+            case $baseURL.'/seeCourse';
+                require_once "controller/seeCourseController.php";
+                $seeCourse = new seeCourseController();
+                echo $seeCourse->view_seeCourse();
+                break;
             default:
                 echo '404 Not Found';
                 break;

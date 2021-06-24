@@ -1,3 +1,5 @@
+checkBalance();
+
 let slideIndex = 0;
 showSlides();
 
@@ -81,38 +83,36 @@ function hide(){
 
 
 
-//----------
-//MASIH ANEH
-//----------
-function checkConfirmPass(){
-    let pass = document.getElementById("pass").value;
-    let email = document.getElementById("email").value;
-    let conpass = document.getElementById("confirmpass").value;
-    if(pass === conpass){
-        document.getElementById("centang1").style.display = "block";
-        document.getElementById("centang2").style.display = "block";
-    }else{
-        document.getElementById("centang1").style.display = "none";
-        document.getElementById("centang2").style.display = "none";
-    }
+// //----------
+// //MASIH ANEH
+// //----------
+// function checkConfirmPass(){
+//     let pass = document.getElementById("pass").value;
+//     let email = document.getElementById("email").value;
+//     let conpass = document.getElementById("confirmpass").value;
+//     if(pass === conpass){
+//         document.getElementById("centang1").style.display = "block";
+//         document.getElementById("centang2").style.display = "block";
+//     }else{
+//         document.getElementById("centang1").style.display = "none";
+//         document.getElementById("centang2").style.display = "none";
+//     }
 
-    if(document.getElementById("centang1").style.display = "block" && document.getElementById("centang2").style.display == "block" && document.getElementById("centang0").style.display == "block"){
-        document.getElementById("saveProfile").style.display = "block";
-    }else{
-        document.getElementById("saveProfile").style.display = "none";
-    }
+//     if(document.getElementById("centang1").style.display = "block" && document.getElementById("centang2").style.display == "block" && document.getElementById("centang0").style.display == "block"){
+//         document.getElementById("saveProfile").style.display = "block";
+//     }else{
+//         document.getElementById("saveProfile").style.display = "none";
+//     }
 
-}
+// }
 
 function checkBalance(){
-    console.log('test');
-    let price = document.getElementById('price').value;
-    let balance = document.getElementById('balance').value;
+    let price = document.getElementById('price').innerHTML;
+    let balance = document.getElementById('balance').innerHTML;
 
-    if(balance < price){
-        document.getElementById('enrollNow').style.display = none;
+    if(parseInt(balance) >= parseInt(price)){
+        document.getElementById('enrollNow').style.display = "block";
     }else{
-        document.getElementById('enrollNow').style.display = block;
+        document.getElementById('enrollNow').style.display = "none";
     }
 }
-checkBalance();

@@ -5,11 +5,28 @@ require_once "model/Course.php";
 require_once "model/member.php";
 require_once "model/Enrollment.php";
 
-class enrollController{
+class seeCourseController{
     protected $db;
 
     public function __construct(){
         $this->db = new MySQLDB("localhost","root","","online_course");
+    }
+
+    public function view_seeCourse(){
+        $result = $this->getCourse();
+        return View::createView('seeCourse.php',['result'=>$result]);
+    }
+
+    public function getCourse(){
+        $IdC = $_POST['IdC'];
+        $queryCourse = "SELECT * FROM course WHERE IdC = $IdC";
+        $queryCourseResult = $this->db->executeSelectQuery($queryCourse);
+        $result = [];
+        foreach($queryCourseResult as $key => $value){
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+        }
+        return $result;
+
     }
 
     public function add_enroll(){
@@ -30,27 +47,5 @@ class enrollController{
         $queryUpdateWallet_result = $this->db->executeNonSelectQuery($queryUpdateWallet);
 
     }
-
-    // public function getWallet(){
-    //     $nama = $_SESSION['username'];
-
-    //     $query = "SELECT wallet FROM Member WHERE nama = '$nama'";
-    //     $query_result = $this->db->executeSelectQuery($query);
-        
-    //     $result = [];
-    //     foreach($query_result as $key => $value){
-    //         $result[] = $value['wallet'];
-    //     }
-    //     return $result;
-    // }
-
-    // public function sisaWallet(){
-    //     $wallet = $this->getWallet();
-    //     $hargaCourse = $_POST['IdC'];
-    // }
-
-    // $queryAdmin = "INSERT INTO admin (idA, IdE, IdE_validasi) VALUES (DEFAULT, (SELECT max(enrolment.IdE) FROM enrollment), 0)";
-    //     $this->db->executeNonSelectQuery($queryAdmin);
-
 }
 ?>
