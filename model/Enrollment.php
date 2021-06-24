@@ -1,19 +1,21 @@
 <?php
 
-class validateEnrollment{
+class Enrollment{
     protected $IdE;
 	protected $wktEnrollment;
     protected $IdC;
     protected $IdM;
+	protected $namaCourse;
+	protected $username;
 
-    protected $IdE_validasi;
-
-	public function __construct($IdE,$wktEnrollment,$IdC,$IdM,$IdE_validasi){
+	public function __construct($IdE,$wktEnrollment,$IdC,$IdM,$namaCourse,$username){
         $this->IdE = $IdE;
 		$this->wktEnrollment = $wktEnrollment;
         $this->IdC = $IdC;
         $this->IdM = $IdM;
-        $this->IdE_validasi = $IdE_validasi;
+		$this->namaCourse = $namaCourse;
+		$this->username = $username;
+		
 	}
 
 	public function getIdE(){
@@ -32,10 +34,13 @@ class validateEnrollment{
 		return $this->IdM;
 	}
 
-    public function getIdE_validasi(){
-		return $this->IdE_validasi;
+	public function getnamaCourse(){
+		return $this->namaCourse;
 	}
- 
+
+	public function getusername(){
+		return $this->username;
+	}
 }
 
 

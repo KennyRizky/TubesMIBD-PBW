@@ -162,5 +162,9 @@ CREATE TABLE admin (
 	IdTR INT (6) UNSIGNED,
 		CONSTRAINT IdTR
 			FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
-	IdTR_validasi int (1)
+	IdTR_validasi int (1),
+
+	IdE INT(6) UNSIGNED,
+		CONSTRAINT IdE
+			FOREIGN KEY (IdE) REFERENCES enrollment(IdE)
 );

@@ -17,7 +17,6 @@
         echo"<br>";
         echo"<hr>";
         echo"<br>";
-
         echo'<a href="buyCredit" class="btnProfile">Buy Credit</a>';
         echo"<form method ='POST' action='enroll'>";
             echo '<input type="hidden" name="IdM" value="'.$IdM.'">';

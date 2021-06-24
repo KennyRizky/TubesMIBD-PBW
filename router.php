@@ -106,7 +106,7 @@
                 $courses = new coursesMemberController();
                 echo $courses->view_courses();
                 break;
-                case $baseURL.'/myCourses';
+            case $baseURL.'/myCourses';
                 require_once "controller/coursesMemberController.php";
                 $myCourses = new coursesMemberController();
                 echo $myCourses->view_enrolledCourses();
@@ -196,8 +196,8 @@
             case $baseURL.'/enroll';
                 require_once "controller/enrollController.php";
                 $enroll = new enrollController();
-                echo $enroll->enroll();
-                header('Location: myCourse');
+                $enroll->add_enroll();
+                header('Location: myCourses');
                 break;
             default:
                 echo '404 Not Found';
