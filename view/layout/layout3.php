@@ -25,7 +25,7 @@
 		</div>
 
 		<div id="account">
-			<a class="navbutton" href="logout" onclick="return confirm('Are you sure you want to logout?');">Log Out</a>
+			<a class="navbutton" href="logoutTeacher" onclick="return confirm('Are you sure you want to logout?');">Log Out</a>
 			<a class="navbutton" href=""> <?php echo $_SESSION['usernameTeacher']?></a>
 
 

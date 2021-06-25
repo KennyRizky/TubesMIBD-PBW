@@ -25,7 +25,21 @@
         <h2>CONGRATULATIONS!! YOU ROCK!</h2>
         <p>Our administrator will validate your score in 24 hour.</p>
         <p>Your certificate will be sent to your email automatically after your score has been validated.</p>
-        <a href="index">Ok</a>
+        <!-- <a href="index">Ok</a> -->
+        <?php
+        foreach($result as $key => $value){
+        echo "<form method='POST' action='validateNilai'>";
+            echo '<input type="hidden" name="IdC" value="' .$row->getIdM(). '">';
+            echo '<input type="hidden" name="IdN" value="' .$row->getIdN(). '">';
+            echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
+            echo '<input type="hidden" name="judulCourse" value="' .$row->getJudulCourse(). '">';
+            echo '<input type="hidden" name="jumlahNilai" value="' .$row->getJumlahNilai(). '">';
+            echo '<input type="hidden" name="passingGrade" value="' .$row->getPassingGrade(). '">';
+            echo '<input type="hidden" name="IdNValidasi" value="' .$row->getIdN_validasi(). '">';
+            echo '<input type = "submit" value ="Validate Nilai">';
+        echo "</form>";
+        }
+        ?>
 
     </div>
 

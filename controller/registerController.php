@@ -49,6 +49,7 @@ class registerController{
         $query = "INSERT INTO pengajar (IdP, nama, pass, email) VALUES (DEFAULT, '$username', '$password', '$email')";
         $this->db->executeNonSelectQuery($query);
     }
+
 }
 
 

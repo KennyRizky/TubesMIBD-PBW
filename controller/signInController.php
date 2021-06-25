@@ -53,6 +53,34 @@ class signInController{
         return $result;
     }
 
+    public function view_signInAdmin(){
+        return View::createView('signinAdmin.php',[]);
+    }
+
+
+    public function check_signInAdmin(){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = "SELECT namaAdmin
+                    from admin
+                    where namaAdmin = '$username' && pass = '$password'
+        ";
+       $query_result = $this->db->executeSelectQuery($query);
+       $result = [];
+        foreach($query_result as $key => $value){
+            if($value['namaAdmin']!== NULL){
+                $_SESSION['usernameAdmin'] = $value['namaAdmin'];
+                header('Location: admin');
+            }
+            else{
+                echo("YOU R NOT ADMIN BITCHES!");
+                echo"<a href = 'signinAdmin'>back</a>";
+                die;
+            }
+        }
+        //return $result;
+        
+    }
 }
 
 

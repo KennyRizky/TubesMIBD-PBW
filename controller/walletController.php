@@ -42,7 +42,7 @@ class walletController{
                     (DEFAULT, curdate(), '$IdM', '$amount', '$paymentMethod')";
         $this->db->executeNonSelectQuery($query);
 
-        $queryAdmin = "INSERT INTO admin (idA, IdTR, IdTR_validasi) VALUES (DEFAULT, (SELECT max(Transaksi_kupon.IdTR) FROM Transaksi_kupon), 0)";
+        $queryAdmin = "INSERT INTO validasi_transaksikupon (IdTR, IdTR_validasi) VALUES ((SELECT max(Transaksi_kupon.IdTR) FROM Transaksi_kupon), 0)";
         $this->db->executeNonSelectQuery($queryAdmin);
         
         

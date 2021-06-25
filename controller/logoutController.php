@@ -9,9 +9,15 @@ class logoutController{
         $this->db = new MySQLDB("localhost","root","","online_course");
     }
 
-    public function logout(){
-        session_start();        
-        session_destroy();
+    public function logoutAdmin(){
+        unset($_SESSION['usernameAdmin']);
+    }
+
+    public function logoutTeacher(){
+        unset($_SESSION['usernameTeacher']);
+    }
+    public function logoutMember(){
+        unset($_SESSION['username']);
     }
 
 

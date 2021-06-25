@@ -62,6 +62,9 @@ class attemptExamController{
 
         $queryNilaiMember = "INSERT INTO nilai_member (IdN, IdM) VALUE ((SELECT max(nilai.IdN) FROM nilai), $resultIdM[0])";
         $queryNilaiMember_result = $this->db->executeNonSelectQuery($queryNilaiMember);
+
+        $queryNilaiValidasi = "INSERT INTO validasi_nilai (IdN, IdN_validasi) VALUE ((SELECT max(nilai.IdN) FROM nilai), 0)";
+        $queryNilaiValidasi_result = $this->db->executeNonSelectQuery($queryNilaiValidasi);
     }
 }
 ?>

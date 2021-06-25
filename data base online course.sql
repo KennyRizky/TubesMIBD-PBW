@@ -34,14 +34,6 @@ CREATE TABLE Transaksi_kupon (
 );
 
 
-CREATE TABLE Tkupon (
-	IdTR INT (6) UNSIGNED,
-	IdK INT (6) UNSIGNED,
-	CONSTRAINT FK_IdTR
-		FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
-	CONSTRAINT FK_IdK
-		FOREIGN KEY (IdK) REFERENCES kupon(IdK)
-);
 
 
 CREATE TABLE  enrollment (
@@ -158,13 +150,32 @@ CREATE TABLE option_ujian(
 );
  
 CREATE TABLE admin (
-	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-	IdTR INT (6) UNSIGNED,
-		CONSTRAINT IdTR
-			FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
-	IdTR_validasi int (1),
+	idA INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	namaAdmin VARCHAR (50),
+	pass VARCHAR (50),
+	email VARCHAR (50)
 
-	IdE INT(6) UNSIGNED,
-		CONSTRAINT IdE
-			FOREIGN KEY (IdE) REFERENCES enrollment(IdE)
 );
+
+CREATE TABLE validasi_transaksiKupon (
+	IdTR INT (6) UNSIGNED,
+		CONSTRAINT IdTRValidasi
+			FOREIGN KEY (IdTR) REFERENCES Transaksi_kupon(IdTR),
+	IdTR_validasi int (1)
+);
+
+CREATE TABLE validasi_nilai (
+	IdN INT(6) UNSIGNED,
+		CONSTRAINT IdNValidasi
+			FOREIGN KEY (IdN) REFERENCES nilai(IdN),
+	IdE INT(6) UNSIGNED,
+		CONSTRAINT IdEValidasi
+			FOREIGN KEY (IdE) REFERENCES enrollment(IdE),
+	
+	IdN_validasi INT(1) UNSIGNED
+
+
+);
+
+INSERT INTO admin (IdA,namaAdmin, pass, email)
+VALUES (DEFAULT, 'ALMIGHTYGOD', '6666666666', 'fransiskus@gmail.com');
