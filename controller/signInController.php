@@ -73,13 +73,11 @@ class signInController{
                 header('Location: admin');
             }
             else{
-                echo("YOU R NOT ADMIN BITCHES!");
-                echo"<a href = 'signinAdmin'>back</a>";
+                echo("You are not an admin!");
+                echo"<a href = 'signin'>back</a>";
                 die;
             }
         }
-        //return $result;
-        
     }
 }
 

@@ -253,6 +253,16 @@
                 $myCourses = new coursesMemberController();
                 echo $myCourses->view_enrolledCourses();
                 break;
+            case $baseURL.'/myCoursesTeacher';
+                require_once "controller/coursesTeacherController.php";
+                $viewCoursesTeacher = new coursesTeacherController();
+                echo $viewCoursesTeacher->view_coursesTeacher();
+                break;
+            case $baseURL.'/courses';
+                require_once "controller/coursesMemberController.php";
+                $courses = new coursesMemberController();
+                echo $courses->view_courses();
+                break;
             default:
                 echo '404 Not Found';
                 break;

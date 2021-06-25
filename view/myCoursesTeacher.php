@@ -15,8 +15,19 @@
         echo "</div>";   
     }
        
-    
+
 ?>
-    
 </div>
+<?php
+echo "<div id = 'paginationBtn'>";
+for ($i = 1; $i <= $pageCount ; $i++){ ?>
+        <form action="myCoursesTeacher" method="POST">
+            <input type="hidden" name="currentPage" value="<?php echo $i?>">
+            <input type="submit" name="currentPage" value="<?php echo $i?>">
+        </form>
+    <?php 
+    } 
+echo "</div>";
+?>   
+
 <a id="addCoursesTeacherBtn" href="addCoursesTeacher">Add Courses</a>
