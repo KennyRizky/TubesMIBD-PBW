@@ -248,6 +248,11 @@
                 $validateNilai->validate_nilai();
                 header('Location: admin');
                 break;
+            case $baseURL.'/myCourses';
+                require_once "controller/coursesMemberController.php";
+                $myCourses = new coursesMemberController();
+                echo $myCourses->view_enrolledCourses();
+                break;
             default:
                 echo '404 Not Found';
                 break;

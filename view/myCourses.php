@@ -36,3 +36,14 @@
     ?>
 </div>
 
+<?php
+echo "<div id = 'paginationBtn'>";
+for ($i = 1; $i <= $pageCount ; $i++){ ?>
+        <form action="myCourses" method="POST">
+            <input type="hidden" name="currentPage" value="<?php echo $i?>">
+            <input type="submit" name="currentPage" value="<?php echo $i?>">
+        </form>
+    <?php 
+    } 
+echo "</div>";
+?>
