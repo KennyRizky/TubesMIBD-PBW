@@ -4,6 +4,7 @@ require_once "controller/services/view.php";
 require_once "model/Course.php";
 require_once "model/member.php";
 require_once "model/Enrollment.php";
+require_once "model/Module.php";
 
 class seeCourseController{
     protected $db;
@@ -14,7 +15,8 @@ class seeCourseController{
 
     public function view_seeCourse(){
         $result = $this->getCourse();
-        return View::createView('seeCourse.php',['result'=>$result]);
+        $resultModule = $this->getAllModule();
+        return View::createView('seeCourse.php',['result'=>$result, 'resultModule'=>$resultModule]);
     }
 
     public function getCourse(){
@@ -26,6 +28,19 @@ class seeCourseController{
             $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
         }
         return $result;
+    }
+
+    public function getAllModule(){
+        $IdC = $_POST['IdC'];
+
+        $queryModule =  "SELECT modul.IdMod, modul.JudulMod, modul.isiMod, isi_courseMod.IdC FROM modul INNER JOIN isi_courseMod ON modul.IdMod = isi_courseMod.IdMod WHERE isi_courseMod.IdC = $IdC";        
+        $query_result = $this->db->executeSelectQuery($queryModule);
+        $resultModule = [];
+
+        foreach($query_result as $key => $value){
+            $resultModule[] = new Module($value['IdMod'], $value['JudulMod'], $value['isiMod']);
+        }
+        return $resultModule;
 
     }
 

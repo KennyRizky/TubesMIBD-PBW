@@ -702,7 +702,15 @@ add Exam
     margin-top: 8%
 }
 
-
+#attemptExamBtn{
+    background-color: lightgreen;
+    border: none;
+    text-decoration: none;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+}
 
 
 
