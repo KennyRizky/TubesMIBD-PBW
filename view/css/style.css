@@ -712,6 +712,37 @@ add Exam
     border-radius: 15px;
 }
 
+#hasilNilai{
+    background-color: orange;
+    color:black;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 30px;
+}
 
+#hasilNilai h1{
+    font-size: 100px;
+}
 
+#judulExam{
+    color: white;
+    margin: 80px;
+}
+
+#lulus{
+    padding: 5px;
+    background-color: lightgreen;
+    display: none;
+    border-radius: 10px;
+}
+
+#galulus{
+    padding: 5px;
+    background-color: red;
+    display: none;
+    border-radius: 10px;
+
+}
 

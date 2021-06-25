@@ -111,6 +111,11 @@
                 $myCourses = new coursesMemberController();
                 echo $myCourses->view_enrolledCourses();
                 break;
+            case $baseURL.'/scoreExam';
+                require_once "controller/scoreExamController.php";
+                $scoreExam = new scoreExamController();
+                echo $scoreExam->view_scoreExam();
+                break;
             default:
                 echo '404 Not Found';
                 break;
