@@ -5,6 +5,7 @@ require_once "model/Course.php";
 require_once "model/member.php";
 require_once "model/Enrollment.php";
 require_once "model/Module.php";
+require_once "model/Exam.php";
 
 class seeCourseController{
     protected $db;
@@ -61,6 +62,22 @@ class seeCourseController{
         $queryUpdateWallet = "UPDATE member SET wallet = wallet - $hargaCourse WHERE IdM = $IdM";
         $queryUpdateWallet_result = $this->db->executeNonSelectQuery($queryUpdateWallet);
 
+    }
+
+    public function getAllExam(){
+        $queryExam =    "SELECT 
+	                        DISTINCT isi_courseUjian.IdC, pertanyaan_ujian.id_pertanyaan, pertanyaan_ujian.isi_pertanyaan, option_ujian.isi_option, option_ujian.jawaban
+                        FROM 
+	                        isi_courseUjian INNER JOIN pertanyaan_ujian ON isi_courseUjian.IdC = pertanyaan_ujian.IdC 
+	                        INNER JOIN option_ujian ON option_ujian.id_pertanyaan = pertanyaan_ujian.id_pertanyaan
+                        WHERE
+	                        isi_courseUjian.IdC = (SELECT(max(isi_courseUjian.IdC))FROM isi_courseUjian)";        
+        $query_result = $this->db->executeSelectQuery($queryExam);
+        $resultExam = [];
+        foreach($query_result as $key => $value){
+            $resultExam[] = new Exam($value['id_pertanyaan'], $value['IdC'], $value['isi_pertanyaan'], $value['isi_option'], $value['jawaban']);
+        }
+        return $resultExam;
     }
 }
 ?>

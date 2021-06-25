@@ -204,6 +204,16 @@
                 $seeCourse = new seeCourseController();
                 echo $seeCourse->view_seeCourse();
                 break;
+            case $baseURL.'/attemptExam';
+                require_once "controller/attemptExamController.php";
+                $attemptExam = new attemptExamController();
+                echo $attemptExam->view_attemptExam();
+                break;
+            case $baseURL.'/submitExam';
+                require_once "controller/attemptExamController.php";
+                $submitExam = new attemptExamController();
+                echo $submitExam->submitExam();
+                break;
             default:
                 echo '404 Not Found';
                 break;
