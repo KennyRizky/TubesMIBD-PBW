@@ -213,6 +213,7 @@
                 require_once "controller/attemptExamController.php";
                 $submitExam = new attemptExamController();
                 echo $submitExam->submitExam();
+                header('Location: scoreExam');
                 break;
             default:
                 echo '404 Not Found';

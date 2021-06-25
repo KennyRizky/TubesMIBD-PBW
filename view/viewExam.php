@@ -1,6 +1,4 @@
- 
 <?php
-    
     echo "<div id='addCourseTeacherE'>";
         echo"<form method='POST' action='submitExam'>";
             $counter = 0;
@@ -20,14 +18,13 @@
                 echo "<hr>";
             }
             
-                echo '<input type="hidden" name="IdC" value="'.$IdC.'">';
-            
+            echo '<input type="hidden" name="IdC" value="'.$IdC.'">';
+            echo '<input type="hidden" name="counter" value="'.$counter.'">';
+
             echo"<input type = 'submit' name='submitExam' value='Submit Exam' id='attemptExamBtn'>";
         echo"</form>";
     echo "</div>";
     
 ?>
-   
-
         
     

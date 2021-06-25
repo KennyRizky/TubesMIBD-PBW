@@ -37,18 +37,31 @@ class attemptExamController{
     }
 
     public function submitExam(){
+        $nama = $_SESSION['username'];
         $IdC = $_POST['IdC'];
-        $nilai = 0;
-        $option[] =;
-        for ($i=0;$option){
-            
-            $answer = $_POST[''];
-            $nilai = $nilai + $answer;
+        $answerCorrect = 0;
+        $counter = $_POST['counter'];
+
+        for ($i = 0; $i < $counter; $i++){      
+            $answer = $_POST['option' . $i];
+            if($answer == 1){
+                $answerCorrect++;
+            }
         }
-        $queryNilai = "INSERT INTO nilai (IdN, jumlah_nilai, IdC) VALUE (DEFAULT, $nilai, $IdC) ";
-        $result_queryNilai = "";
-        $queryNilaiMember ="";
-        $result_queryNilaiMember="";
+        $nilai = $answerCorrect / $counter * 100;
+
+        $queryIdM = "SELECT IdM FROM member WHERE nama = '$nama'";
+        $queryIdM_result = $this->db->executeNonSelectQuery($queryIdM);
+        $resultIdM = [];
+        foreach($queryIdM_result as $key => $value){
+            $resultIdM[] = $value['IdM'];
+        }
+
+        $queryNilai = "INSERT INTO nilai (IdN, jumlah_nilai, IdC) VALUE (DEFAULT, $nilai, $IdC)";
+        $queryNilai_result = $this->db->executeNonSelectQuery($queryNilai);
+
+        $queryNilaiMember = "INSERT INTO nilai_member (IdN, IdM) VALUE ((SELECT max(nilai.IdN) FROM nilai), $resultIdM[0])";
+        $queryNilaiMember_result = $this->db->executeNonSelectQuery($queryNilaiMember);
     }
 }
 ?>
