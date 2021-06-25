@@ -88,11 +88,11 @@ class adminController{
     }
 
     public function getAllNilai(){
-        $query = "SELECT nilai.IdN,nilai.jumlah_nilai,nilai.IdC,nilai_member.IdM,validasi_nilai.IdN_validasi, course.batas_nilai FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN INNER JOIN validasi_nilai ON nilai_member.IdN = validasi_nilai.IdN INNER JOIN course ON course.IdC = nilai.IdC WHERE IdN_validasi = 0;";
+        $query = "SELECT nilai.IdN,nilai.jumlah_nilai,nilai.IdC,nilai_member.IdM,validasi_nilai.IdN_validasi, course.batas_nilai, course.judulCourse FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN INNER JOIN validasi_nilai ON nilai_member.IdN = validasi_nilai.IdN INNER JOIN course ON course.IdC = nilai.IdC WHERE IdN_validasi = 0;";
         $query_result = $this->db->executeSelectQuery($query);
         $result = [];
         foreach($query_result as $key => $value){
-            $result[] = new validateNilai($value['IdM'], $value['IdN'],$value['IdC'],$value['jumlah_nilai'],$value['batas_nilai'], $value['IdN_validasi']);
+            $result[] = new validateNilai($value['IdM'], $value['IdN'],$value['IdC'],$value['jumlah_nilai'],$value['judulCourse'],$value['batas_nilai'], $value['IdN_validasi']);
         }
         return $result;
     }
