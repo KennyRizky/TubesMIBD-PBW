@@ -23,7 +23,7 @@ class scoreExamController{
         $queryNilai_result = $this->db->executeSelectQuery($queryNilai);
         $resultNilai = [];
         foreach($queryNilai_result as $key => $value){
-            $resultNilai[] = new validateNilai($value['IdM'],$value['IdN'],$value['IdC'],$value['judulCourse'],$value['jumlah_nilai'],$value['batas_nilai'],0);
+            $resultNilai[] = new validateNilai($value['IdM'],$value['IdN'],$value['IdC'],$value['jumlah_nilai'],$value['judulCourse'],$value['batas_nilai'],0);
         }
         return $resultNilai;
 

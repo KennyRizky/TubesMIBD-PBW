@@ -25,7 +25,7 @@
         <h2>CONGRATULATIONS!! YOU ROCK!</h2>
         <p>Our administrator will validate your score in 24 hour.</p>
         <p>Your certificate will be sent to your email automatically after your score has been validated.</p>
-        <!-- <a href="index">Ok</a> -->
+        <a href="index">Ok</a>
         <?php
         foreach($result as $key => $value){
         echo "<form method='POST' action='validateNilai'>";

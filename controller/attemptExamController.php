@@ -57,13 +57,20 @@ class attemptExamController{
             $resultIdM[] = $value['IdM'];
         }
 
+        $queryIdE = "SELECT * FROM course_enrollment INNER JOIN course ON course_enrollment.IdC = course.IdC WHERE course_enrollment.IdC = $IdC";
+        $queryIdE_result = $this->db->executeSelectQuery($queryIdE);
+        $resultIdE = [];
+        foreach($queryIdE_result as $key => $value){
+            $resultIdE[] = $value['IdE'];
+        }
+
         $queryNilai = "INSERT INTO nilai (IdN, jumlah_nilai, IdC) VALUE (DEFAULT, $nilai, $IdC)";
         $queryNilai_result = $this->db->executeNonSelectQuery($queryNilai);
 
         $queryNilaiMember = "INSERT INTO nilai_member (IdN, IdM) VALUE ((SELECT max(nilai.IdN) FROM nilai), $resultIdM[0])";
         $queryNilaiMember_result = $this->db->executeNonSelectQuery($queryNilaiMember);
 
-        $queryNilaiValidasi = "INSERT INTO validasi_nilai (IdN, IdN_validasi) VALUE ((SELECT max(nilai.IdN) FROM nilai), 0)";
+        $queryNilaiValidasi = "INSERT INTO validasi_nilai (IdN, IdE, IdN_validasi) VALUE ((SELECT max(nilai.IdN) FROM nilai), $resultIdE[0] ,0)";
         $queryNilaiValidasi_result = $this->db->executeNonSelectQuery($queryNilaiValidasi);
     }
 }

@@ -7,11 +7,6 @@
             <th>amount</th>
             <th>payment method</th>
             <th>validate wallet</th>
-            <!-- <th>enrollment</th>
-            <th>validate_enrollment</th>
-            <th>nilai ujian</th>
-            <th>validate nilai</th>
-            <th>sertif</th> -->
         </tr>
         <?php
             foreach($result as $key => $row){
@@ -31,6 +26,37 @@
             }
         ?>
     </table>
+
+    <h1 id="judul_admin">Exam Score Info</h1>
+    <table id = "tabel_admin">
+        <tr>
+            <th>IdM</th>
+            <th>IdN</th>
+            <th>IdC</th>
+            <th>Course Title</th>
+            <th>Score</th>
+            <th>Passing Grade</th>
+            <th>Validate Score</th>
+        </tr>
+        <?php
+            foreach($resultNilai as $key => $row){
+                echo "<tr>";
+                echo "<td>" .$row->getIdM()."</td>";
+                echo "<td>" .$row->getIdN()."</td>";
+                echo "<td>" .$row->getIdC()."</td>";
+                echo "<td>" .$row->getJudulCourse(). "</td>" ;
+                echo "<td>" .$row->getJumlahNilai(). "</td>" ;
+                echo "<td>" .$row->getPassingGrade(). "</td>" ;
+                echo "<td> 
+                <form action='validateNilai' method='POST'>
+                    <input type='hidden' name='IdN' value='" .$row->getIdN(). "'>
+                    <input type='submit' value='validate'>
+                </form>
+                </td>" ;
+            }
+        ?>
+    </table>
+
     <h1 id="judul_admin">Enrollment Info</h1>
     <table id = "tabel_admin">
         <tr>
@@ -53,4 +79,6 @@
             }
         ?>
     </table>
+
+
 </div>

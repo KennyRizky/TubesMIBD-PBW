@@ -246,6 +246,7 @@
                 require_once "controller/adminController.php";
                 $validateNilai = new adminController();
                 $validateNilai->validate_nilai();
+                header('Location: admin');
                 break;
             default:
                 echo '404 Not Found';
