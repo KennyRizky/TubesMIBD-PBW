@@ -1,3 +1,4 @@
+<script src="view/js/registerCheck.js" defer ></script>
     <div id="kotakForm">
         <h1 class="JudulForm">Register</h1>
         <form action="submitRegister" method="POST" id="isiform">

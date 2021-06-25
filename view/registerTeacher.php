@@ -1,3 +1,4 @@
+<script src="view/js/registerCheck.js" defer ></script>
 <head>
     <script src="view/js/script.js" defer ></script>	
 	<link rel="stylesheet" href="view/css/style.css">

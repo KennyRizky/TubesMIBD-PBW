@@ -1,4 +1,4 @@
-
+<script src="view/js/editProfileCheck.js" defer ></script>
 <div id="kotakProfile">
     <div>
         <h1 style="color:black">Edit Profile</h1>

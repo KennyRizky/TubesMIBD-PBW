@@ -1,4 +1,4 @@
-
+<script src="view/js/balance.js" defer ></script>
     <div id="orderSummary">
         <h2>Order Summary</h2>
         <?php

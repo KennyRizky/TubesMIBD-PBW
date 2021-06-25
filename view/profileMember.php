@@ -19,21 +19,6 @@
         <a href="editProfile" class="btnProfile">Edit Profile</a>
         <a href="buyCredit" class="btnProfile">Buy Credit</a>
         </div>
-
-        <div id="myCourse">
-            <h3>My Courses</h3>
-            <table>
-                <tr>
-                    <td>Course 1 <a href="">see course<a> </td>
-                    <td>Course 2 <a href="">see course<a></td>
-                </tr>
-                <tr>
-                    <td>Course 1 <a href="">see course<a> </td>
-                    <td>Course 2 <a href="">see course<a></td>
-                </tr>
-
-            </table>
-        </div>
     </div>
 </div>
 <br>
