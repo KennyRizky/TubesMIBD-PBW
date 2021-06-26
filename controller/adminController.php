@@ -112,7 +112,7 @@ class adminController{
         INNER JOIN validasi_nilai ON validasi_nilai.IdN = nilai.IdN 
         INNER JOIN enrollment_member ON enrollment_member.IdM = nilai_member.IdM
         INNER JOIN enrollment ON enrollment_member.IdE = enrollment.IdE
-        WHERE validasi_nilai.IdN_validasi = 1 AND enrollment.wktSertif = NULL";
+        WHERE validasi_nilai.IdN_validasi = 1 AND enrollment.wktSertif IS NULL";
         $query_result = $this->db->executeNonSelectQuery($query);
         $resultNilaiValidasi = [];
         foreach($query_result as $key => $value){

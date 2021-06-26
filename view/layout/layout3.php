@@ -17,11 +17,6 @@
 			<a class="navbutton" href="index">Home</a>
 			<a class="navbutton" href="myCoursesTeacher">My Courses</a>
 			<a class="navbutton" href="companyprofile">About</a>
-
-			<div id="searchbar">
-				<input id="logosearch" type="text" placeholder="Search..">
-				<i class="fa fa-search"></i>
-			</div>
 		</div>
 
 		<div id="account">

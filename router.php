@@ -269,6 +269,11 @@
                 $sertifikat = new sertifikatController();
                 echo $sertifikat->view_sertifikat();
                 break;
+            case $baseURL.'/search';
+                require_once "controller/coursesMemberController.php";
+                $search= new coursesMemberController();
+                echo $search->view_courses();
+                break;
             default:
                 echo '404 Not Found';
                 break;

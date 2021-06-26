@@ -19,8 +19,10 @@
 			<a class="navbutton" href="companyprofile">About</a>
 
 			<div id="searchbar">
-				<input id="logosearch" type="text" placeholder="Search..">
-				<i class="fa fa-search"></i>
+				<form action="search" method="POST">
+					<input id="logosearch" type="text" name="search" placeholder="Search..">
+					<input type="submit"value="search">
+				</form>
 			</div>
 		</div>
 
