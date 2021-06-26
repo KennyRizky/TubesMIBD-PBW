@@ -94,7 +94,8 @@ class coursesTeacherController{
     }
 
     public function getPageCount(){
-        $query = "SELECT * FROM course";
+        $namaIdP = $_SESSION['usernameTeacher'];
+        $query = "SELECT * FROM course INNER JOIN pengajar on course.IdP = pengajar.IdP where pengajar.nama = '$namaIdP'";
         $query_result = $this->db->executeSelectQuery($query);
         $result=[];
         foreach($query_result as $key => $value){

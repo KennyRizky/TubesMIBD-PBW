@@ -1,3 +1,18 @@
+<?php
+  function custom_echo($x, $length)
+  {
+    if(strlen($x)<=$length)
+    {
+      echo $x;
+    }
+    else
+    {
+      $y=substr($x,0,$length) . '...';
+      echo $y;
+    }
+  }
+?>
+
 <h1 id='JudulTeacher'>My Courses</h1>
 
 <div id="kotakCourses">
@@ -6,7 +21,11 @@
         foreach($resultCourse as $key=>$row){  
             echo '<div class="courses">';  
             echo "<h2>" . $row->getJudulCourse() . "</h2>";
-            echo "<p>" .$row->getCourseDesc() . "</p>";
+            echo "<hr>";
+
+            custom_echo( $row->getCourseDesc() ,300);
+            echo "<hr>";
+
             echo"<form method ='POST' action='seeCourse'>";
                 echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
                 echo '<input type="submit" class="courseBtn" value="See Course">';
@@ -17,6 +36,7 @@
 
     ?>
 </div>
+<hr style = "width: 95%">
 
 <h1 id='JudulTeacher'>Other Courses</h1>
 
@@ -25,9 +45,11 @@
     foreach($result as $key=>$row){
         echo'<div class="courses">';
             echo"<h2>". $row->getJudulCourse() . "</h2>";
-            echo "<p>" .$row->getCourseDesc() . "</p>";
             echo "<hr>";
-            echo "<p> IDR " .$row->getHargaCourse() . "</p>";
+
+            custom_echo( $row->getCourseDesc() ,300);
+            echo "<hr>";
+            echo "<p> <i class='fa fa-money'></i> " .$row->getHargaCourse() . "</p>";
         
         echo"<form method ='POST' action='orderSummary'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';

@@ -1,3 +1,18 @@
+<?php
+  function custom_echo($x, $length)
+  {
+    if(strlen($x)<=$length)
+    {
+      echo $x;
+    }
+    else
+    {
+      $y=substr($x,0,$length) . '...';
+      echo $y;
+    }
+  }
+?>
+
 <h1 id='JudulTeacher'>My Courses</h1>
 
 <div id="kotakCourses">
@@ -6,7 +21,10 @@
     foreach($result as $key=>$row){  
         echo '<div class="courses">';  
         echo "<h2>" . $row->getJudulCourse() . "</h2>";
-        echo "<p>" .$row->getCourseDesc() . "</p>";
+        echo "<hr>";
+        custom_echo( $row->getCourseDesc() ,300);
+        echo "<hr>";
+
         echo "<form method='POST' action='seeMore'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
             echo '<input type="submit" class="courseBtn" value="See More">';

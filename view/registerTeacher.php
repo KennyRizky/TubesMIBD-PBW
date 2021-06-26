@@ -4,45 +4,58 @@
 	<link rel="stylesheet" href="view/css/style.css">
 </head>
 
-<body>
     <div id="kotakForm">
-        <h1 class="JudulForm">Register</h1>
-        <form action="submitRegisterTeacher" method ="POST" id = "isiform" enctype="multipart/form-data">
+        <h1 class="JudulForm">Register As Teacher</h1>
+        <form action="submitRegisterTeacher" method ="POST" enctype="multipart/form-data">
             <div class="flexform">
+                <p>Email: </p>   
                 <input class="registerinput" type="text" id="email" name="email" placeholder="email" oninput="checkVemail(); hide(); checkForValidity();">
                 <img src = "view/css/check.png" id="centang0">
             </div>
 
             <div class="flexform">
+                <p>Username: </p>   
                 <input class="registerinput" type="text" id="uName" name="username" placeholder="username" oninput="checkVuser(); hide(); checkForValidity();">
                 <img src = "view/css/check.png" id="centang1">
             </div>
 
             <div class="flexform">
+                <p>Password: </p>   
                 <input class="registerinput" type="password" id="pass" name="password" placeholder="password" oninput="checkVpass(); hide(); checkForValidity();">
                 <img src = "view/css/check.png" id="centang2">
             </div>
 
             <div class="flexform">
-                <input class="registerinput" type="text" id="alamat" name="alamat" placeholder="alamat">
+                <p>Address: </p>   
+                <input class="registerinput" type="text" id="alamat" name="alamat" required placeholder="address">
             </div>
 
             <div class="flexform">
-                <input class="registerinput" type="date" id="birthDate", name="birthDate">
+                <p>Date of Birth: </p>   
+                <input class="registerinput" type="date" id="birthDate", required name="birthDate">
             </div>
             
-            <div class="flexform">
-                <input class="registerinput" type="file" id="ijazah", name="ijazah">
+            <div class="uploadCV">
+                <p>Upload CV: </p>  
+                <input class="registerinput" type="file" id="ijazah", required name="ijazah">
             </div>
             
+            <br>
+            <br>
             <div id ="startBtn">
                 <input type="submit" value="register" id="butSignIn">
             </div>
         </form>
-        <p>Already have an Account? <a href="signin">Sign in</a></p>
-        <p><a href="register" class="tombolBack">Back</a></p>
+        <br>
+        <br>
+        <div class="notMe">
+            <p>Already have an Account? <a href="signinTeacher">Sign In</a></p>
+            <p>Are You a Student? <a href="signin">Sign In as Student</a></p>
+
+            <br>
+            <p><a href="register" class="tombolBack">Back</a></p>
+        </div>
     </div>
-</body>
 
 <script>
 	let formData = new FormData();
