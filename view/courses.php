@@ -3,7 +3,7 @@
 <div id="kotakCourses">
 <?php
   foreach($result as $key=>$row){
-      echo'<div class="courses">';
+      echo'<div class="courses soft-shadow">';
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         echo "<p>" .$row->getCourseDesc() . "</p>";
@@ -19,7 +19,7 @@
 <div id="kotakCourses">
 <?php
   foreach($cheapCourses as $key=>$row){
-      echo'<div class="courses">';
+      echo'<div class="courses soft-shadow">';
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         echo "<p>" .$row->getCourseDesc() . "</p>";
