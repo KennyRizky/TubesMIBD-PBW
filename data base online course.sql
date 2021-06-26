@@ -38,7 +38,8 @@ CREATE TABLE Transaksi_kupon (
 
 CREATE TABLE  enrollment (
 	IdE INT (6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	wktEnrollment DATE
+	wktEnrollment DATE,
+	wktSertif DATE
 );
 
 CREATE TABLE enrollment_member (

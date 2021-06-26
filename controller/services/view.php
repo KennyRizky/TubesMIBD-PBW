@@ -12,7 +12,7 @@ class View{
 		
 		ob_start();
 		
-		if($view === 'admin.php'){
+		if($view === 'admin.php' || $view === 'sertifikat.php'){
 			include 'view/layout/layoutAdmin.php';
 			$include = ob_get_contents();
 			ob_end_clean();

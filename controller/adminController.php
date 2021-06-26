@@ -17,8 +17,9 @@ class adminController{
         $result = $this->getAllWallet();
         $resultEnrollment = $this->getAllEnrollment();
         $resultNilai = $this->getAllNilai();
+        $resultNilaiValidasi = $this->get_nilaiValidasi();
         
-        return View::createView('admin.php',['result'=>$result, 'resultEnrollment'=>$resultEnrollment,'resultNilai'=>$resultNilai]);
+        return View::createView('admin.php',['result'=>$result, 'resultEnrollment'=>$resultEnrollment,'resultNilai'=>$resultNilai,'resultNilaiValidasi'=>$resultNilaiValidasi]);
     }
 
     public function getNilai(){
@@ -102,6 +103,22 @@ class adminController{
         $query = "UPDATE validasi_nilai SET IdN_validasi = 1 WHERE IdN = $IdN";
         $query_result = $this->db->executeNonSelectQuery($query);
 
+    }
+
+    public function get_nilaiValidasi(){
+        $query = "SELECT nilai.IdN, nilai_member.IdM, course.IdC, course.judulCourse, nilai.jumlah_nilai, course.batas_nilai, validasi_nilai.IdN_validasi, enrollment.wktSertif, enrollment_member.IdM 
+        FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN 
+        INNER JOIN course ON course.IdC = nilai.IdC 
+        INNER JOIN validasi_nilai ON validasi_nilai.IdN = nilai.IdN 
+        INNER JOIN enrollment_member ON enrollment_member.IdM = nilai_member.IdM
+        INNER JOIN enrollment ON enrollment_member.IdE = enrollment.IdE
+        WHERE validasi_nilai.IdN_validasi = 1 AND enrollment.wktSertif = NULL";
+        $query_result = $this->db->executeNonSelectQuery($query);
+        $resultNilaiValidasi = [];
+        foreach($query_result as $key => $value){
+            $resultNilaiValidasi[] = new validateNilai($value['IdM'],$value['IdN'],$value['IdC'],$value['jumlah_nilai'],$value['judulCourse'],$value['batas_nilai'],$value['IdN_validasi']);
+        }
+        return $resultNilaiValidasi;
     }
     
 }

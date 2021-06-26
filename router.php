@@ -133,6 +133,7 @@
                 $signInAdmin = new signInController();
                 echo $signInAdmin->view_signInAdmin();
                 break;
+            
             default:
                 echo '404 Not Found';
                 break;
@@ -262,6 +263,11 @@
                 require_once "controller/coursesMemberController.php";
                 $courses = new coursesMemberController();
                 echo $courses->view_courses();
+                break;
+            case $baseURL.'/sertifikat';
+                require_once "controller/sertifikatController.php";
+                $sertifikat = new sertifikatController();
+                echo $sertifikat->view_sertifikat();
                 break;
             default:
                 echo '404 Not Found';

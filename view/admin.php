@@ -79,6 +79,28 @@
             }
         ?>
     </table>
+    <h1 id="judul_admin">Certificate</h1>
+    <table id = "tabel_admin">
+        <tr>
+            <th>IdM</th>
+            <th>Course Name</th>
+            <th>Send Certificate</th>
+        </tr>
+        <?php
+            foreach($resultNilaiValidasi as $key => $row){
+                echo "<tr>";
+                echo "<td>" .$row->getIdM()."</td>";
+                echo "<td>" .$row->getJudulCourse(). "</td>" ;
+                echo "<td>" ;
+                    echo"<form method='POST' action ='sertifikat'>";
+                        echo"<input type='hidden' name='IdN' value='".$row->getIdN()."'>";
+                        echo"<input type='hidden' name='IdM' value='".$row->getIdM()."'>";
+                        echo"<input type='submit' name='sendSertifikat' value='Send Certificate'>";
+                    echo"</form>";
+                echo"</td>" ;
+            }
+        ?>
+    </table>
 
 
 </div>
