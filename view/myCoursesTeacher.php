@@ -9,7 +9,7 @@
         echo "<p>" .$row->getCourseDesc() . "</p>";
         echo "<form method='POST' action='seeMore'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-            echo '<input type="submit" value="See More">';
+            echo '<input type="submit" class="courseBtn" value="See More">';
         echo "</form>";
 
         echo "</div>";   

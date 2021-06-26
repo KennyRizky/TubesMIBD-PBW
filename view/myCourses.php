@@ -9,7 +9,7 @@
             echo "<p>" .$row->getCourseDesc() . "</p>";
             echo"<form method ='POST' action='seeCourse'>";
                 echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-                echo '<input type="submit" value="See Course">';
+                echo '<input type="submit" class="courseBtn" value="See Course">';
             echo"</form>";
             echo "</div>";   
         }
@@ -26,10 +26,12 @@
         echo'<div class="courses">';
             echo"<h2>". $row->getJudulCourse() . "</h2>";
             echo "<p>" .$row->getCourseDesc() . "</p>";
+            echo "<hr>";
+            echo "<p> IDR " .$row->getHargaCourse() . "</p>";
         
         echo"<form method ='POST' action='orderSummary'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-            echo '<input type="submit" value="Enroll">';
+            echo '<input type="submit" class="courseBtn" value="Enroll">';
         echo"</form>";
         echo"</div>";
     }

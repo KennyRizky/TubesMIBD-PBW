@@ -11,7 +11,7 @@
                         Username: <br><input class="registerinput" type="text" id="uName" name="username" placeholder="username" oninput="checkVuser(); hide(); checkForValiditySignIn();">
                         <img src = "view/css/check.png" id="centang1">
                     </div>
-
+                    <br>
                     <div class="flexform">
                         Password: <br><input class="registerinput" type="password" id="pass" name="password" placeholder="password" oninput="checkVpass(); hide(); checkForValiditySignIn();">
                         <img src = "view/css/check.png" id="centang2">

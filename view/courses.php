@@ -1,4 +1,4 @@
-<h1 id='JudulTeacher'>Courses</h1>
+<h1 id='JudulTeacher'>All Courses</h1>
 
 <div id="kotakCourses">
 <?php
@@ -7,6 +7,9 @@
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         echo "<p>" .$row->getCourseDesc() . "</p>";
+        echo "<hr>";
+        echo "<p> IDR " .$row->getHargaCourse() . "</p>";
+
       echo'</div>';
   }
 ?>
@@ -20,6 +23,8 @@
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         echo "<p>" .$row->getCourseDesc() . "</p>";
+        echo "<hr>";
+        echo "<p> IDR " .$row->getHargaCourse() . "</p>";
       echo'</div>';
   }
 ?>
