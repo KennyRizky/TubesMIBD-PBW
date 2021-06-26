@@ -21,7 +21,9 @@ class coursesMemberController{
         $pageCount = $this->getPageCount();
         $resultCourse = $this->getMyCourses();
         $resultAllCourse = $this->getAllCourses();
-        return View::createView('myCourses.php',['resultCourse'=>$resultCourse, 'result'=>$resultAllCourse, 'pageCount'=>$pageCount]);
+        $cheapCourses = $this->getCheapCourses();
+
+        return View::createView('myCourses.php',['resultCourse'=>$resultCourse, 'result'=>$resultAllCourse, 'pageCount'=>$pageCount, 'cheapCourses'=>$cheapCourses]);
     }
 
     public function getMyCourses(){

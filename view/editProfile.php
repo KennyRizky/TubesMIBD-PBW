@@ -1,5 +1,5 @@
 <script src="view/js/editProfileCheck.js" defer ></script>
-<div id="kotakProfile">
+<div id="kotakEditProfile">
     <div>
         <h1 style="color:black">Edit Profile</h1>
         <form action="updateProfile" method="POST" id="isieditform">
@@ -23,12 +23,12 @@
 
             <div class="editProfileForm">
                 <p>Alamat:</p>
-                <input class="registerinput" type="text" id="alamat" name="alamat" placeholder="alamat">
+                <input class="registerinput" type="text" id="alamat" name="alamat" placeholder="alamat" required>
             </div>
 
             <div class="editProfileForm">
                 <p>Date of Birth:</p>
-                <input class="registerinput" type="date" id="birthDate" name="birthDate" placeholder="password">
+                <input class="registerinput" type="date" id="birthDate" name="birthDate" placeholder="password" required>
             </div>
             <br>
 

@@ -1,5 +1,5 @@
 <div id="seeCourse">
-    <div class="courses">
+    <div>
         <?php
             foreach($result as $key => $row){
                 echo "<h2>Course Title: ".$row->getJudulCourse() . "</h2>";
@@ -16,12 +16,13 @@
                 echo "<h2>Module Title: ".$row->getJudulMod() . "</h2>";
                 echo "<h2>Content: </h2>";
                 echo $row->getIsiMod();
+                echo "<br>";
+                echo "<br>";
+
+                echo "<hr>";
 
             }
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<hr>";
+
 
             foreach($result as $key => $row){
                 echo"<form method ='POST' action='attemptExam'>";

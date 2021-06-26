@@ -1,11 +1,10 @@
 
 <div id="kotakProfile">
     <div>
+        <h1 style="color:black">My Profile</h1>
         <?php
 		foreach ($result as $key => $row) {
 			echo "<p>Username: ".$row->getUsername()."</p>";
-            echo "<p>Password: ".$row->getPassword()."</p>";
-            echo "<p>Role: Member";
 			echo "<p>Email: ".$row->getEmail()."</p>";
 			echo "<p>Date of Birth: ".$row->getBirthDate()."</p>";
             echo "<p>Alamat: ".$row->getAlamat()."</p>";

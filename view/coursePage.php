@@ -71,3 +71,5 @@
     } 
     echo "</div>";
 ?>
+
+<a href="myCoursesTeacher" id="donebtn">Done</a>

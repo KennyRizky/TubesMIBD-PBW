@@ -11,7 +11,7 @@
 <body>
 	<div id="header">
 
-		<a id="logo" href="index">Study Hub</a>
+		<a id="logo" href="">Study Hub</a>
 
         <h1>ADMIN PAGE</h1>
 

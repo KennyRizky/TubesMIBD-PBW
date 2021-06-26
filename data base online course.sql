@@ -68,7 +68,7 @@ CREATE TABLE course (
 	hargaCourse INT (20),
 	IdS INT (6),
 	waktu_terbit_sertif DATE,
-	courseDesc VARCHAR (1000),
+	courseDesc VARCHAR (5000),
 	IdP INT (6) UNSIGNED,
 	CONSTRAINT fkidp
 		FOREIGN KEY (IdP) REFERENCES pengajar(IdP)
@@ -179,4 +179,10 @@ CREATE TABLE validasi_nilai (
 );
 
 INSERT INTO admin (IdA,namaAdmin, pass, email)
-VALUES (DEFAULT, 'ALMIGHTYGOD', '6666666666', 'fransiskus@gmail.com');
+VALUES (1, 'Fransiskus', 'frans123', 'fransiskus@gmail.com');
+
+INSERT INTO admin (IdA,namaAdmin, pass, email)
+VALUES (2, 'KennyRizky', 'kenny123', 'kennyRizky@gmail.com');
+
+INSERT INTO admin (IdA,namaAdmin, pass, email)
+VALUES (3, 'Christopher', 'chris123', 'christopher@gmail.com');

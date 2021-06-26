@@ -34,8 +34,8 @@ class adminController{
     }
 
     public function getAllWallet(){
-        $query = "SELECT 
-                    admin.namaAdmin, member.IdM,member.nama, validasi_transaksikupon.IdTR_validasi,transaksi_kupon.IdK, transaksi_kupon.payment_method, transaksi_kupon.IdTR  
+        $query = "SELECT DISTINCT 
+                    member.IdM,member.nama, validasi_transaksikupon.IdTR_validasi,transaksi_kupon.IdK, transaksi_kupon.payment_method, transaksi_kupon.IdTR  
                 FROM 
                     admin CROSS JOIN Transaksi_kupon INNER JOIN Member ON Member.IdM = Transaksi_kupon.IdM INNER join validasi_transaksikupon ON validasi_transaksikupon.IdTR = transaksi_kupon.IdTR WHERE validasi_transaksikupon.IdTR_validasi = 0";
         $query_result = $this->db->executeSelectQuery($query);

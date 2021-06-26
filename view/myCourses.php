@@ -60,6 +60,31 @@
     ?>
 </div>
 
+</div>
+<hr style = "width: 95%">
+<h1 id='JudulTeacher'>Courses Under IDR 50.000</h1>
+
+<div id="kotakCourses">
+<?php
+    foreach($cheapCourses as $key=>$row){
+        echo'<div class="courses">';
+            echo"<h2>". $row->getJudulCourse() . "</h2>";
+            echo "<hr>";
+
+            custom_echo( $row->getCourseDesc() ,300);
+            echo "<hr>";
+            echo "<p> <i class='fa fa-money'></i> " .$row->getHargaCourse() . "</p>";
+
+        echo"<form method ='POST' action='orderSummary'>";
+            echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
+            echo '<input type="submit" class="courseBtn" value="Enroll">';
+        echo"</form>";
+        echo"</div>";
+}
+?>
+
+</div>
+
 <?php
 echo "<div id = 'paginationBtn'>";
 for ($i = 1; $i <= $pageCount ; $i++){ ?>

@@ -18,7 +18,7 @@
 <div id="kotakCourses">
 <?php
   foreach($result as $key=>$row){
-      echo'<div class="courses soft-shadow">';
+      echo'<div class="courses">';
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         custom_echo( $row->getCourseDesc() ,300);
@@ -35,7 +35,7 @@
 <div id="kotakCourses">
 <?php
   foreach($cheapCourses as $key=>$row){
-      echo'<div class="courses soft-shadow">';
+      echo'<div class="courses">';
         echo"<h2>". $row->getJudulCourse() . "</h2>";
         echo "<hr>";
         custom_echo( $row->getCourseDesc() ,300);

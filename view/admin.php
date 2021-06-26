@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION['usernameAdmin'])){
+        echo "You are not an admin!";
+        die;
+    }
+?>
+
 <div id="isi_admin"> 
     <h1 id="judul_admin">Wallet Info</h1>
     <table id = "tabel_admin">

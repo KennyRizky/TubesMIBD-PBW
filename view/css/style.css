@@ -1,11 +1,9 @@
 body{
     margin: 0;
-    background: linear-gradient(160deg, #050a30 0%, #1389d2 100%);
-    background-size: cover;
+    background: #0C2D48;
     font-family: "Gill Sans", sans-serif;
     height: 100%;
 }
-
 
 #logo{
     font-size: 3em;
@@ -53,6 +51,7 @@ body{
     display: grid;
     grid-template-columns: 20% 65% 15%;
     align-items: center;
+    height: 60px;
 }
 
 #nav{
@@ -107,7 +106,7 @@ body{
     margin-left: 10px;
     padding: 10px;
     box-shadow: 0 0 5px 0 ;
-    background-color:#ebcc34;
+    background-color: #7EC8E3;
     backdrop-filter: blur(2rem);
     margin-bottom: 10px;
 }
@@ -119,11 +118,8 @@ body{
     box-shadow: 0 0 5px 0 ;
     backdrop-filter: blur(2rem);
     margin-bottom: 10px;
-    background-color:olivedrab;
+    background-color:#7EC8E3;
     margin-right: 10px;
-
-
-
 }
 
 #info{
@@ -218,7 +214,7 @@ body{
 }
 
 #testimoni{
-    background-color: white;
+    background-color: #75E6DA;
     height: 600px;
     margin: 15px;
     border-radius: 10px;
@@ -320,7 +316,7 @@ body{
 }
 
 #centang1, #centang0 , #centang2{
-    height: 100%;
+    height: 50px;
     object-fit: cover;
     display: none;
     margin-left: 10px;
@@ -403,15 +399,29 @@ PROFILE MEMBER
 */
 
 #kotakProfile{
-    background-color: orange;
+    background-color: #D4F1F4;
     color: white;
+    width: 30%;
+    border-radius: 15px;
+    margin-left: 35%;
+    display: flex;
+    padding: 50px;
+    padding-top: 10px;
+    margin-top: 10%;    
+    padding-bottom: 30px;
+}
+
+#kotakEditProfile{
+    background-color: #D4F1F4;
+    color: black;
     width: 50%;
     border-radius: 15px;
     margin-left: 25%;
     display: flex;
-    justify-content: center;
+    padding: 50px;
+    padding-top: 10px;
     margin-top: 10%;    
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 #kotakProfile p{
@@ -424,7 +434,7 @@ PROFILE MEMBER
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #75E6DA;
     border-radius: 3px;
 }
 
@@ -458,7 +468,7 @@ PROFILE MEMBER
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #75E6DA;
     border-radius: 3px;
     height: 50px;
     width: 100px;
@@ -470,7 +480,7 @@ PROFILE MEMBER
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #75E6DA;
     border-radius: 3px;
     height: 50px;
     width: 100px;
@@ -486,7 +496,7 @@ PROFILE MEMBER
     border: 1px solid black;
     padding: 10px;
     float: right;
-    margin-right: 25%;
+    margin-right: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,7 +506,7 @@ PROFILE MEMBER
 
 /*WALLET*/
 #kotakWalletStatus{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
@@ -504,12 +514,12 @@ PROFILE MEMBER
     display: flex;
     justify-content: center;
 
-    margin-top: 30px;    
+    margin-top: 100px;    
     align-items: center;
 }
 
 #kotakWalletPayment{
-    background-color: orange;
+    background-color:#7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
@@ -531,7 +541,8 @@ PROFILE MEMBER
     margin-left: 150px;
     width: 100px;
     height: 30px;
-    background-color: lightgreen;
+    background-color: #75E6DA;
+    border: 1px solid black;
     color: black;
     border-radius: 5px;
     margin-right: 10px;
@@ -565,12 +576,6 @@ My Courses
 
 }
 
-.soft-shadow{
-    box-shadow: 12px 9px 63px 1px rgba(79,104,127,0.7);
-    -webkit-box-shadow: 12px 9px 63px 1px rgba(79,104,127,0.7);
-    -moz-box-shadow: 12px 9px 63px 1px rgba(79,104,127,0.7);
-}
-
 .courses{
     background-color: #75E6DA;
     border-radius: 1em;
@@ -598,20 +603,23 @@ My Courses
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #7EC8E3;
     border-radius: 0.5em;
-    margin: 20px;
-    float: right;
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    width: 80%;
 }
 
 #addCourseTeacher{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
+    margin: 100px;
+    margin-bottom: 50px;
     margin-left: 25%;
     padding: 20px;
-    margin-top: 80px;    
     align-items: center;
 }
 
@@ -628,18 +636,19 @@ My Courses
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #75E6DA;
     border-radius: 0.5em;
-    margin: 20px;
 }
 /*-------------
 add Module
 --------------*/
 #addModule{
+    margin-top: 80px;
+    margin-left: 20px;
     color: white;
 }
 #kotak_addModule{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
@@ -660,7 +669,7 @@ add Module
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #D4F1F4;
     border-radius: 0.5em;
     margin: 20px;
 }
@@ -677,10 +686,12 @@ add Module
 add Exam
 --------------*/
 #addExam{
+    margin-top: 80px;
+    margin-left: 20px;
     color: white;
 }
 #kotak_addExam{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
@@ -701,7 +712,7 @@ add Exam
     border: 1px solid black;
     padding: 10px;
     color: black;
-    background-color: lightgreen;
+    background-color: #D4F1F4;
     border-radius: 0.5em;
     margin: 20px;
 }
@@ -715,7 +726,8 @@ add Exam
     margin: 20px;
 }
 #option{
-    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 3% 97%;
     color: black;
 }
 .optionContent{
@@ -725,29 +737,31 @@ add Exam
 
 
 #addCourseTeacherM{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
     margin-left: 25%;
     padding: 20px;
-    margin-top: 80px;    
+    margin-top: 50px; 
+    margin-bottom: 50px;   
     align-items: center;
 }
 
 #addCourseTeacherE{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 50%;
     border-radius: 15px;
     margin-left: 25%;
     padding: 20px;
-    margin-top: 80px;    
+    margin-top: 50px; 
+    margin-bottom: 50px;      
     align-items: center;
 }
 
 #orderSummary{
-    background-color: orange;
+    background-color: #7EC8E3;
     color: black;
     width: 60%;
     border-radius: 15px;
@@ -757,17 +771,18 @@ add Exam
 }
 
 #seeCourse{
-    background-color: white;
+    background-color: #D4F1F4;
     color: black;
     width: 80%;
     margin-left: 10%;
     border-radius: 15px;
-    margin-top: 8%
+    margin-top: 8%;
+    padding: 20px;
 }
 
 #attemptExamBtn{
-    background-color: lightgreen;
-    border: none;
+    background-color: #75E6DA;
+    border: 1px solid black;
     text-decoration: none;
     padding: 20px 20px;
     margin: 20px 20px;
@@ -776,7 +791,7 @@ add Exam
 }
 
 #hasilNilai{
-    background-color: orange;
+    background-color:#75E6DA;
     color:black;
     width: 60%;
     margin-left: 20%;
@@ -795,8 +810,8 @@ add Exam
 }
 
 #lulus{
-    padding: 5px;
-    background-color: lightgreen;
+    padding: 15px;
+    background-color: #189AB4;
     display: none;
     border-radius: 10px;
 }
@@ -812,7 +827,9 @@ add Exam
 #paginationBtn{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 25px;
+
     
 }
 
@@ -869,3 +886,39 @@ add Exam
     width: 150px;
     float: right;
 }
+
+#donebtn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 10%;
+    margin-left: 45%;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: #75E6DA;
+    border-radius: 0.5em;
+    margin-top: 20px;
+}
+
+#enrollbtn{
+    margin-bottom: 30px;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: #75E6DA;
+    border-radius: 3px;
+}
+
+#attemptExam{
+    background-color: #D4F1F4;
+    color: black;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 15px;
+    margin-top: 8%;
+    padding: 20px;
+}
+

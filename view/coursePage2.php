@@ -27,7 +27,7 @@
         }
         ?>
 
-        
+    <br>
     <a href="addModule" class="addBtn">Add Module</a>
 
 </div>

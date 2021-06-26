@@ -2,7 +2,7 @@
 
 <?php
     foreach($nilai as $key => $row){
-        echo "<h1 id='judulExam'>Exam: " . $row->getJudulCourse() . "</h1>";
+        echo "<h1 id='judulExam'>Exam Result For: " . $row->getJudulCourse() . "</h1>";
     }
 ?>
 
@@ -22,10 +22,10 @@
     ?>
 
     <div id='lulus'>
-        <h2>CONGRATULATIONS!! YOU ROCK!</h2>
+        <h2>CONGRATULATIONS!!</h2>
         <p>Our administrator will validate your score in 24 hour.</p>
         <p>Your certificate will be sent to your email automatically after your score has been validated.</p>
-        <a href="index">Ok</a>
+        <a href="index" id="donebtn">Ok</a>
         
         <!-- // foreach($result as $key => $value){
         // echo "<form method='POST' action='validateNilai'>";
@@ -44,7 +44,7 @@
 
     <div id='galulus'>
         <h2>BETTER LUCK NEXT TIME.</h2>
-        <a href="index">Back</a>
+        <a href="index" id="donebtn">Back</a>
     </div>
 
 </div>

@@ -1,6 +1,6 @@
 <script src="view/js/balance.js" defer ></script>
     <div id="orderSummary">
-        <h2>Order Summary</h2>
+        <h1>Order Summary</h1>
         <?php
             foreach($result as $key=>$row){
                 echo"<h1> Title: ".$row->getJudulCourse(). "</h1>";
@@ -29,7 +29,7 @@
 
                 echo"<br>";
                 echo"<br>";
-                echo '<input type="submit" value="Enroll Now!">';
+                echo '<input type="submit" id="enrollbtn" value="Enroll Now!">';
             echo"</form>";
         ?>
     </div>
