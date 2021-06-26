@@ -11,9 +11,10 @@ class coursesMemberController{
     }
 
     public function view_courses(){
+        $cheapCourses = $this->getCheapCourses();
         $pageCount = $this->getPageCount();
         $resultCourse = $this->getAllCourses();
-        return View::createView('courses.php',['result'=>$resultCourse, 'pageCount'=>$pageCount]);
+        return View::createView('courses.php',['result'=>$resultCourse, 'pageCount'=>$pageCount, 'cheapCourses'=>$cheapCourses]);
     }
 
     public function view_enrolledCourses(){
@@ -86,6 +87,38 @@ class coursesMemberController{
         $pageCount = ceil(count($result) / $show);
 
         return $pageCount;
+    }
+
+    public function getCheapCourses(){
+        $query = "SELECT * FROM course WHERE hargaCourse < 50000";
+        $query_result = $this->db->executeSelectQuery($query);
+        $result=[];
+        foreach($query_result as $key => $value){
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+        }
+
+
+        $start = 0;
+        $show = 4;
+        $pageCount = ceil(count($result) / $show);
+
+        if(isset($_POST['currentPage'])){
+            $currentPage = $_POST['currentPage'];
+        }else{
+            $currentPage = 1;
+        }
+
+        $currentRecords = ($currentPage - 1) * $show;
+
+        $query .= " LIMIT $currentRecords, $show";
+        $query_result_Limited = $this->db->executeSelectQuery($query);
+
+        $resultLimited = [];
+        foreach($query_result_Limited as $key => $value){
+            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+        }
+
+        return $resultLimited;
     }
 }
 ?>

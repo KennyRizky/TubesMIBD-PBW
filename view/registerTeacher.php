@@ -40,6 +40,7 @@
             </div>
         </form>
         <p>Already have an Account? <a href="signin">Sign in</a></p>
+        <p><a href="register" class="tombolBack">Back</a></p>
     </div>
 </body>
 

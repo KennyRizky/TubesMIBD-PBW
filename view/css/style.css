@@ -247,6 +247,15 @@ body{
 
 /*SignIn*/
 
+.tombolBack{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 15px;
+}
+
 .JudulForm{
     display: grid;
     justify-content: center;
@@ -298,8 +307,12 @@ body{
 }
 
 .flexform{
-    display: flex;
+    padding: 5px;
     margin: 10px;
+    height: 45px;
+}
+
+.flexform input{
     height: 30px;
 }
 
@@ -309,7 +322,6 @@ body{
 
 #tabel_admin{
     display: flex;
-    ;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
