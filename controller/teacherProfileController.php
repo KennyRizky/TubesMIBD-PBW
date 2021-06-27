@@ -19,7 +19,7 @@ class teacherProfileController{
     public function getTeacher(){
         $IdC = $_POST['IdC'];
 
-        $queryCV = "SELECT pengajar.IdP, pengajar.nama, pengajar.email, pengajar.alamat, pengajar.tgllahir, pengajar.CV FROM pengajar INNER JOIN course WHERE IdC = $IdC";
+        $queryCV = "SELECT pengajar.IdP, pengajar.nama, pengajar.email, pengajar.alamat, pengajar.tgllahir, pengajar.CV, course.IdC FROM pengajar INNER JOIN course ON pengajar.IdP = course.IdP WHERE IdC = $IdC";
         $queryCVResult = $this->db->executeSelectQuery($queryCV);
 
         $result = [];
