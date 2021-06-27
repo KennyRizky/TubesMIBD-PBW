@@ -37,7 +37,7 @@ class coursesMemberController{
         $queryMyCourses = "SELECT * FROM enrollment_member INNER JOIN course_enrollment ON enrollment_member.IdE = course_enrollment.IdE INNER JOIN course ON course.IdC = course_enrollment.IdC WHERE IdM = $IdM";
         $query_resultMyCourses = $this->db->executeSelectQuery($queryMyCourses);
         foreach($query_resultMyCourses as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         return $result;
     }
@@ -51,7 +51,7 @@ class coursesMemberController{
         $query_result = $this->db->executeSelectQuery($query);
         $result=[];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         $start = 0;
         $show = 4;
@@ -70,7 +70,7 @@ class coursesMemberController{
 
         $resultLimited = [];
         foreach($query_result_Limited as $key => $value){
-            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
 
         return $resultLimited;
@@ -83,7 +83,7 @@ class coursesMemberController{
         $query_result = $this->db->executeSelectQuery($query);
         $result=[];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
 
         $start = 0;
@@ -98,7 +98,7 @@ class coursesMemberController{
         $query_result = $this->db->executeSelectQuery($query);
         $result=[];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
 
 
@@ -119,7 +119,7 @@ class coursesMemberController{
 
         $resultLimited = [];
         foreach($query_result_Limited as $key => $value){
-            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
 
         return $resultLimited;

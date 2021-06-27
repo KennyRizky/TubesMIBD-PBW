@@ -34,7 +34,7 @@ class seeMoreController{
         $result = [];
         foreach($query_result as $key => $value){
 
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         return $result;
     }

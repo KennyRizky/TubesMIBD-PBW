@@ -45,7 +45,7 @@ class attemptExamController{
                 $resultAttempt[] = 1;
             }else{
                 $resultAttempt[] = 0;
-            }
+            }   
         }
         return $resultAttempt;
     }

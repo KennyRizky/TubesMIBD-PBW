@@ -68,7 +68,7 @@ class coursesTeacherController{
         $query_result = $this->db->executeSelectQuery($query);
         $result = [];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         
         $start = 0;
@@ -88,7 +88,7 @@ class coursesTeacherController{
     
         $resultLimited = [];
         foreach($query_result_Limited as $key => $value){
-            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $resultLimited[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         return $resultLimited;
     }
@@ -99,7 +99,7 @@ class coursesTeacherController{
         $query_result = $this->db->executeSelectQuery($query);
         $result=[];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
     
         $start = 0;
@@ -114,7 +114,7 @@ class coursesTeacherController{
         $query_result = $this->db->executeSelectQuery($query);
         $result = [];
         foreach($query_result as $key => $value){
-            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'],$value['IdS'], $value['waktu_terbit_sertif'], $value['courseDesc'], $value['IdP']);
+            $result[] = new Course($value['IdC'], $value['batas_nilai'], $value['judulCourse'], $value['hargaCourse'], $value['courseDesc'], $value['IdP']);
         }
         return $result;
     }
@@ -159,8 +159,8 @@ class coursesTeacherController{
             $resultIdP[] = $value['IdP'];
         }
 
-        $query= "INSERT INTO course (IdC, batas_nilai, judulCourse, hargaCourse, IdS, waktu_terbit_sertif, courseDesc, IdP)
-                VALUES (DEFAULT, '$passingGrade', '$judul','$hargaCourse', NULL, NULL, '$courseDescription', '$resultIdP[0]')
+        $query= "INSERT INTO course (IdC, batas_nilai, judulCourse, hargaCourse, courseDesc, IdP)
+                VALUES (DEFAULT, '$passingGrade', '$judul','$hargaCourse', '$courseDescription', '$resultIdP[0]')
         ";
         $query_result2 = $this->db->executeNonSelectQuery($query);
     }
