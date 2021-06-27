@@ -274,6 +274,11 @@
                 $search= new coursesMemberController();
                 echo $search->view_courses();
                 break;
+            case $baseURL.'/viewTeacher';
+                require_once "controller/teacherProfileController.php";
+                $profileT= new teacherProfileController();
+                echo $profileT->view_teacherProfile();
+                break;
             default:
                 echo '404 Not Found';
                 break;

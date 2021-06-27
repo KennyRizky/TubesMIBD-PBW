@@ -53,7 +53,7 @@
         
         echo"<form method ='POST' action='orderSummary'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-            echo '<input type="submit" class="courseBtn" value="Enroll">';
+            echo '<input type="submit" class="courseBtn" value="See More">';
         echo"</form>";
         echo"</div>";
     }
@@ -77,7 +77,7 @@
 
         echo"<form method ='POST' action='orderSummary'>";
             echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-            echo '<input type="submit" class="courseBtn" value="Enroll">';
+            echo '<input type="submit" class="courseBtn" value="See More">';
         echo"</form>";
         echo"</div>";
 }

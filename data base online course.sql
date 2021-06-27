@@ -58,7 +58,7 @@ CREATE TABLE pengajar (
 	email VARCHAR (50),
 	alamat VARCHAR(50),
 	tgllahir DATE,
-	ijazah varchar (50)
+	CV varchar (50)
 );
 
 CREATE TABLE course (

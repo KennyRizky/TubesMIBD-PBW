@@ -37,7 +37,7 @@
             
             <div class="uploadCV">
                 <p>Upload CV: </p>  
-                <input class="registerinput" type="file" id="ijazah", required name="ijazah">
+                <input class="registerinput" type="file" id="CV", required name="CV">
             </div>
             
             <br>
@@ -62,7 +62,7 @@
 	let fileField = document.querySelector("input[type='file']");
 
 	formData.append('extra','abc123');
-	formData.append('ijazah',fileField.files[0]);
+	formData.append('CV',fileField.files[0]);
 
 	fetch('submitRegisterTeacher', {
 		method: 'POST',
