@@ -66,8 +66,6 @@ CREATE TABLE course (
 	batas_nilai INT (6),
 	judulCourse VARCHAR (50),
 	hargaCourse INT (20),
-	IdS INT (6),
-	waktu_terbit_sertif DATE,
 	courseDesc VARCHAR (5000),
 	IdP INT (6) UNSIGNED,
 	CONSTRAINT fkidp
