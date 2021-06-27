@@ -13,9 +13,41 @@ class attemptExamController{
     }
 
     public function view_attemptExam(){
+
+        if($this->alreadyAttempted()[0] == 1){
+            echo "You Cannot Attempt This Exam Anymore";
+            echo"<br>";
+            echo "<a href='index'>Back</a>";
+            die;
+        }
+
         $resultExam = $this->getAllExam();
         $IdC = $_POST['IdC'];
         return View::createView('viewExam.php',['resultExam'=>$resultExam, 'IdC'=>$IdC]);
+    }
+
+    public function alreadyAttempted(){
+        $nama = $_SESSION['username'];
+        $IdC = $_POST['IdC'];
+
+        $queryIdM = "SELECT IdM FROM member WHERE nama = '$nama'";
+        $queryIdM_result = $this->db->executeNonSelectQuery($queryIdM);
+        $resultIdM = [];
+        foreach($queryIdM_result as $key => $value){
+            $resultIdM[] = $value['IdM'];
+        }
+
+        $queryAttempt = "SELECT * FROM nilai INNER JOIN nilai_member ON nilai_member.IdN = nilai.IdN WHERE nilai_member.IdM = $resultIdM[0] AND IdC = $IdC";
+        $queryAttemptResult = $this->db->executeSelectQuery($queryAttempt);
+        $resultAttempt = [];
+        foreach($queryAttemptResult as $key => $value){
+            if(isset($queryAttempt)){
+                $resultAttempt[] = 1;
+            }else{
+                $resultAttempt[] = 0;
+            }
+        }
+        return $resultAttempt;
     }
 
 

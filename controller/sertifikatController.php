@@ -51,7 +51,9 @@ class sertifikatController{
     public function get_tanggalSertif(){
         $this->updateTanggalSertif();
         $IdM = $_POST['IdM'];
-        $query ="SELECT enrollment.wktSertif, enrollment_member.IdM FROM enrollment INNER JOIN enrollment_member on enrollment.IdE = enrollment_member.IdE WHERE IdM = $IdM";
+        $IdN = $_POST['IdN'];
+
+        $query ="SELECT DISTINCT enrollment.wktSertif, enrollment_member.IdM FROM enrollment INNER JOIN enrollment_member on enrollment.IdE = enrollment_member.IdE INNER JOIN nilai_member ON nilai_member.IdM = enrollment_member.IdM WHERE enrollment_member.IdM = $IdM AND nilai_member.IdN = $IdN";
         $query_result = $this->db->executeSelectQuery($query);
         $resultWaktuSertif = [];
         foreach($query_result as $key => $value){

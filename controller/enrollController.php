@@ -13,6 +13,13 @@ class enrollController{
     }
 
     public function add_enroll(){
+        if($this->alreadyEnrolled()[0] == 1){
+            echo "You Are Already Enrolled.";
+            echo"<br>";
+            echo "<a href='index'>Back</a>";
+            die;
+        }
+
         $IdM = $_POST['IdM'];
         $IdC = $_POST['IdC'];
         $hargaCourse = $_POST['hargaCourse'];
@@ -31,26 +38,28 @@ class enrollController{
 
     }
 
-    // public function getWallet(){
-    //     $nama = $_SESSION['username'];
+    public function alreadyEnrolled(){
+        $nama = $_SESSION['username'];
+        $IdC = $_POST['IdC'];
 
-    //     $query = "SELECT wallet FROM Member WHERE nama = '$nama'";
-    //     $query_result = $this->db->executeSelectQuery($query);
-        
-    //     $result = [];
-    //     foreach($query_result as $key => $value){
-    //         $result[] = $value['wallet'];
-    //     }
-    //     return $result;
-    // }
+        $queryIdM = "SELECT IdM FROM member WHERE nama = '$nama'";
+        $queryIdM_result = $this->db->executeNonSelectQuery($queryIdM);
+        $resultIdM = [];
+        foreach($queryIdM_result as $key => $value){
+            $resultIdM[] = $value['IdM'];
+        }
 
-    // public function sisaWallet(){
-    //     $wallet = $this->getWallet();
-    //     $hargaCourse = $_POST['IdC'];
-    // }
-
-    // $queryAdmin = "INSERT INTO admin (idA, IdE, IdE_validasi) VALUES (DEFAULT, (SELECT max(enrolment.IdE) FROM enrollment), 0)";
-    //     $this->db->executeNonSelectQuery($queryAdmin);
-
+        $queryEnroll = "SELECT * FROM enrollment_member INNER JOIN enrollment ON enrollment_member.IdE = enrollment.IdE INNER JOIN course_enrollment ON course_enrollment.IdE = enrollment.IdE WHERE enrollment_member.IdM = $resultIdM[0] AND course_enrollment.IdC = $IdC";
+        $queryEnroll = $this->db->executeSelectQuery($queryEnroll);
+        $resultAttempt = [];
+        foreach($queryEnroll as $key => $value){
+            if(isset($queryEnroll)){
+                $resultAttempt[] = 1;
+            }else{
+                $resultAttempt[] = 0;
+            }
+        }
+        return $resultAttempt;
+    }
 }
 ?>

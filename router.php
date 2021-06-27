@@ -156,13 +156,13 @@
                 require_once "controller/signInController.php";
                 $indexCtrl = new signInController();
                 $indexCtrl->check_signIn();
-                header('Location: myCourses');
+                header('Location: index');
                 break;
             case $baseURL.'/signinTeacher';
                 require_once "controller/signInController.php";
                 $signInTeacherCtrl = new signInController();
                 $signInTeacherCtrl->check_signInTeacher();
-                header('Location: myCoursesTeacher');
+                header('Location: index');
                 break;
             case $baseURL.'/updateProfile';
                 require_once "controller/editProfileController.php";

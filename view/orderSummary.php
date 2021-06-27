@@ -4,7 +4,7 @@
             foreach($result as $key=>$row){
                 echo"<h1> Title: ".$row->getJudulCourse(). "</h1>";
                 echo "<h2>Course Description: </h2>";
-                echo"<p id = 'price'>".$row->getCourseDesc(). "</p>";
+                echo"<p>".$row->getCourseDesc(). "</p>";
                 echo"<form method ='POST' action='viewTeacher'>";
                     echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
                     echo '<input type="submit" value="About the Teacher" id="attemptExamBtn">';
