@@ -1,4 +1,12 @@
+<?php
+    if(!isset($_SESSION['usernameAdmin'])){
+        echo "Sign In First!";
+        die;
+    }
+?>
+
 <div id="sertifikat">
+
     <h1 class="studyHubSertif">STUDY HUB CERTIFICATE</h1>
     <h2>CONGRATULATIONS YOU HAVE PASSED THE EXAM OF THIS COURSE!</h2>
     <p>
@@ -9,10 +17,6 @@
             
             foreach($resultNama as $key => $row){
                 echo "<h2 class='studyHubSertif'>". $resultNama[0] ."</h2>";
-            }
-
-            foreach($resultWaktuSertif as $key =>$row){
-                echo "<h2 class='studyHubSertif'>Issued On: ". $resultWaktuSertif[0] . "</h2>";
             }
         ?>
     </p>

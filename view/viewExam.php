@@ -1,4 +1,11 @@
 <?php
+    if(!isset($_SESSION['username'])){
+        echo "Sign In First!";
+        die;
+    }
+?>
+
+<?php
     echo "<div id='attemptExam'>";
         echo"<form method='POST' action='submitExam'>";
             $counter = 0;

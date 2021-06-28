@@ -1,4 +1,11 @@
 <?php
+    if(!isset($_SESSION['username'])){
+        echo "Sign In First!";
+        die;
+    }
+?>
+
+<?php
   function custom_echo($x, $length)
   {
     if(strlen($x)<=$length)

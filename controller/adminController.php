@@ -106,17 +106,23 @@ class adminController{
     }
 
     public function get_nilaiValidasi(){
-        $query = "SELECT nilai.IdN, nilai_member.IdM, course.IdC, course.judulCourse, nilai.jumlah_nilai, course.batas_nilai, validasi_nilai.IdN_validasi, enrollment.wktSertif, enrollment_member.IdM 
-        FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN 
-        INNER JOIN course ON course.IdC = nilai.IdC 
-        INNER JOIN validasi_nilai ON validasi_nilai.IdN = nilai.IdN 
-        INNER JOIN enrollment_member ON enrollment_member.IdM = nilai_member.IdM
-        INNER JOIN enrollment ON enrollment_member.IdE = enrollment.IdE
-        WHERE validasi_nilai.IdN_validasi = 1 AND enrollment.wktSertif IS NULL";
+        // $query = "SELECT nilai.IdN, nilai_member.IdM, course.IdC, course.judulCourse, nilai.jumlah_nilai, course.batas_nilai, validasi_nilai.IdN_validasi, enrollment.wktSertif, enrollment_member.IdM 
+        // FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN 
+        // INNER JOIN course ON course.IdC = nilai.IdC 
+        // INNER JOIN validasi_nilai ON validasi_nilai.IdN = nilai.IdN 
+        // INNER JOIN enrollment_member ON enrollment_member.IdM = nilai_member.IdM
+        // INNER JOIN enrollment ON enrollment_member.IdE = enrollment.IdE
+        // WHERE validasi_nilai.IdN_validasi = 1 AND enrollment.wktSertif IS NULL";
+        $query = "SELECT
+                    *
+                    FROM
+                        enrollment INNER JOIN enrollment_member ON enrollment_member.IdE = enrollment.IdE
+                        LEFT OUTER JOIN validasi_nilai ON validasi_nilai.IdE = enrollment.IdE
+                    WHERE enrollment.wktSertif IS NULL AND validasi_nilai.IdN_validasi = 1";
         $query_result = $this->db->executeNonSelectQuery($query);
         $resultNilaiValidasi = [];
         foreach($query_result as $key => $value){
-            $resultNilaiValidasi[] = new validateNilai($value['IdM'],$value['IdN'],$value['IdC'],$value['jumlah_nilai'],$value['judulCourse'],$value['batas_nilai'],$value['IdN_validasi']);
+            $resultNilaiValidasi[] = new validateNilai($value['IdM'],$value['IdN'],$value['IdE'],NULL,NULL,NULL,NULL);
         }
         return $resultNilaiValidasi;
     }

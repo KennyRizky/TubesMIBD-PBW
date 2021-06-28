@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION['usernameTeacher'])){
+        echo "Sign In First!";
+        die;
+    }
+?>
+
 <div id="addCourseTeacher">
         <h2>Course Title</h2>
         <?php

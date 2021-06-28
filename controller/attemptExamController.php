@@ -89,7 +89,7 @@ class attemptExamController{
             $resultIdM[] = $value['IdM'];
         }
 
-        $queryIdE = "SELECT * FROM course_enrollment INNER JOIN course ON course_enrollment.IdC = course.IdC WHERE course_enrollment.IdC = $IdC";
+        $queryIdE = "SELECT enrollment_member.IdE FROM course_enrollment INNER JOIN course ON course_enrollment.IdC = course.IdC INNER JOIN enrollment_member ON enrollment_member.IdE = course_enrollment.IdE WHERE course_enrollment.IdC = $IdC AND enrollment_member.IdM = $resultIdM[0]";
         $queryIdE_result = $this->db->executeSelectQuery($queryIdE);
         $resultIdE = [];
         foreach($queryIdE_result as $key => $value){

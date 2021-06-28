@@ -11,10 +11,10 @@ class sertifikatController{
     }
 
     public function view_sertifikat(){
+        $update = $this->updateTanggalSertif();
         $resultNilai = $this->get_nilaiValidasi();
         $resultNama = $this->getUsername();
-        $resultWaktuSertif = $this->get_tanggalSertif();
-        return View::createView('sertifikat.php',['resultNilai'=>$resultNilai,'resultNama'=>$resultNama,'resultWaktuSertif'=>$resultWaktuSertif]);
+        return View::createView('sertifikat.php',['resultNilai'=>$resultNilai,'resultNama'=>$resultNama]);
     }
 
 
@@ -43,24 +43,10 @@ class sertifikatController{
     }
 
     public function updateTanggalSertif(){
-        $IdM = $_POST['IdM'];
-        $query ="UPDATE enrollment INNER JOIN enrollment_member SET wktSertif = curdate() WHERE IdM = $IdM";
-        $query_result = $this->db->executeSelectQuery($query);
-    }
+        $IdE = $_POST['IdE'];
 
-    public function get_tanggalSertif(){
-        $this->updateTanggalSertif();
-        $IdM = $_POST['IdM'];
-        $IdN = $_POST['IdN'];
-
-        $query ="SELECT DISTINCT enrollment.wktSertif, enrollment_member.IdM FROM enrollment INNER JOIN enrollment_member on enrollment.IdE = enrollment_member.IdE INNER JOIN nilai_member ON nilai_member.IdM = enrollment_member.IdM WHERE enrollment_member.IdM = $IdM AND nilai_member.IdN = $IdN";
-        $query_result = $this->db->executeSelectQuery($query);
-        $resultWaktuSertif = [];
-        foreach($query_result as $key => $value){
-            $resultWaktuSertif[] = $value['wktSertif'];
-        }
-        
-        return $resultWaktuSertif;
+        $query ="UPDATE enrollment SET wktSertif = curdate() WHERE IdE = $IdE";
+        $query_result = $this->db->executeNonSelectQuery($query);
     }
 }
 

@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION['username'])){
+        echo "Sign In First!";
+        die;
+    }
+?>
+
 <script src="view/js/balance.js" defer ></script>
     <div id="orderSummary">
         <?php
