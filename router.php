@@ -133,7 +133,11 @@
                 $signInAdmin = new signInController();
                 echo $signInAdmin->view_signInAdmin();
                 break;
-            
+            case $baseURL.'/cetak';
+                require_once "controller/cetakController.php";
+                $cetak = new cetakController();
+                echo $cetak->view_cetak();
+                break;            
             default:
                 echo '404 Not Found';
                 break;
