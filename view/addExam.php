@@ -13,10 +13,10 @@
         <textarea type="text" name="question" id="question" class="addExamForm" placeholder="Insert Question" rows="10" cols="85"></textarea>
         <p class="addExamForm">Insert Option</p>
         <div id="option">
-            A <input type="text" name="optionContentA" class="optionContent"> 
-            B <input type="text" name="optionContentB" class="optionContent">
-            C <input type="text" name="optionContentC" class="optionContent">
-            D <input type="text" name="optionContentD" class="optionContent">
+            A <input type="text" name="optionContentA" class="optionContent"required> 
+            B <input type="text" name="optionContentB" class="optionContent"required>
+            C <input type="text" name="optionContentC" class="optionContent"required>
+            D <input type="text" name="optionContentD" class="optionContent"required>
             <br><br>
             <div>
             Correct Answers: 

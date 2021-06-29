@@ -66,7 +66,7 @@ CREATE TABLE course (
 	batas_nilai INT (6),
 	judulCourse VARCHAR (50),
 	hargaCourse INT (20),
-	courseDesc VARCHAR (5000),
+	courseDesc VARCHAR (50000),
 	IdP INT (6) UNSIGNED,
 	CONSTRAINT fkidp
 		FOREIGN KEY (IdP) REFERENCES pengajar(IdP)
@@ -106,7 +106,7 @@ CREATE TABLE ujian(
 create table modul(
 	IdMod int (6) unsigned AUTO_INCREMENT PRIMARY KEY,
 	JudulMod varchar (100),
-	isiMod varchar (5000)
+	isiMod varchar (50000)
 );
 
 CREATE TABLE isi_courseMod (
@@ -132,7 +132,7 @@ create table pertanyaan_ujian(
 	IdC INT (6) UNSIGNED,
 	CONSTRAINT foreignkeycourse
 		FOREIGN KEY (IdC) REFERENCES course(IdC),
-	isi_pertanyaan varchar (500),
+	isi_pertanyaan varchar (5000),
 	id_ujian INT (6) UNSIGNED,
 	CONSTRAINT foreignkeyujian
 		FOREIGN KEY (id_ujian) REFERENCES ujian(id_ujian)
@@ -143,7 +143,7 @@ CREATE TABLE option_ujian(
 	id_pertanyaan INT (6) UNSIGNED,
 		CONSTRAINT foreignkeyIdPertanyaan
 		FOREIGN KEY (id_pertanyaan) REFERENCES pertanyaan_ujian(id_pertanyaan),
-	isi_option VARCHAR (100),
+	isi_option VARCHAR (5000),
 	jawaban INT (1)
 
 );
