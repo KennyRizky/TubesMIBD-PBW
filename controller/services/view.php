@@ -29,6 +29,11 @@ class View{
 			$include = ob_get_contents();
 			ob_end_clean();
 			return $include;
+		}else if($view === 'cetak.php'){
+			include 'view/layout/layoutPrint.php';
+			$include = ob_get_contents();
+			ob_end_clean();
+			return $include;
 		}
 		
 		else{

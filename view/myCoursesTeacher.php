@@ -24,21 +24,24 @@
 
 <div id="kotakCourses">
 <?php
-    
+    $counter = 0;
     foreach($result as $key=>$row){  
         echo '<div class="courses">';  
-        echo "<h2>" . $row->getJudulCourse() . "</h2>";
-        echo "<hr>";
-        custom_echo( $row->getCourseDesc() ,300);
-        echo "<hr>";
+          echo "<h2>" . $row->getJudulCourse() . "</h2>";
+          echo "<hr>";
+          custom_echo( $row->getCourseDesc() ,300);
+          echo "<hr>";
+          echo "<p>Enrollment: ".$resultEnrollment[$counter]->getIdE(). "</p>";
 
-        echo "<form method='POST' action='seeMore'>";
-            echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
-            echo '<input type="submit" class="courseBtn" value="See More">';
-        echo "</form>";
+          echo "<form method='POST' action='seeMore'>";
+              echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';
+              echo '<input type="submit" class="courseBtn" value="See More">';
+          echo "</form>";
 
+          $counter++;
         echo "</div>";   
     }
+
        
 
 ?>

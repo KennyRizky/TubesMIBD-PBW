@@ -87,7 +87,7 @@
         ?>
     </table>
     <br>
-    <a href="cetak" target="_blank">CETAK LAPORAN</a>
+    <a id="cetakBtn" href="cetak" target="_blank">PRINT REPORT</a>
     <br>
     <h1 id="judul_admin">Certificate</h1>
     <table id = "tabel_admin">

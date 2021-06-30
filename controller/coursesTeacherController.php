@@ -4,6 +4,9 @@ require_once "controller/services/view.php";
 require_once "model/Course.php";
 require_once "model/Module.php";
 require_once "model/Exam.php";
+require_once "model/Enrollment.php";
+
+
 
 class coursesTeacherController{
     protected $db;
@@ -15,11 +18,28 @@ class coursesTeacherController{
     public function view_coursesTeacher(){
         $pageCount = $this->getPageCount();
         $resultCourseTitle = $this->getAllCourse();
-        return View::createView('myCoursesTeacher.php',['result'=>$resultCourseTitle, 'pageCount'=>$pageCount]);
+        $resultEnrollment = $this->getEnrollment();
+        return View::createView('myCoursesTeacher.php',['result'=>$resultCourseTitle, 'pageCount'=>$pageCount, 'resultEnrollment'=>$resultEnrollment]);
     }
 
     public function view_add_courses(){
         return View::createView('addCoursesTeacher.php',[]);
+    }
+
+    public function getEnrollment(){
+        $query = "  SELECT
+	                    COUNT(course_enrollment.IdE) as jumlahEnrollment,
+                        course_enrollment.IdC
+                    FROM
+	                    course_enrollment
+                    GROUP BY course_enrollment.IdC
+        ";
+        $query_result = $this->db->executeSelectQuery($query);
+        $resultEnrollment = [];
+        foreach($query_result as $key => $value){
+            $resultEnrollment[] = new Enrollment($value['jumlahEnrollment'], NULL, $value['IdC'], NULL, NULL, NULL);
+        }
+        return $resultEnrollment;
     }
 
     public function view_coursePage(){

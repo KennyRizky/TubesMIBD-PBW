@@ -16,6 +16,19 @@ body{
     color:#7EC8E3;
 }
 
+#cetakBtn{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    background-color: #75E6DA;
+    border-radius: 3px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    margin-left: 80%;
+}
+
 
 #header{
     background-color: #189AB4;
@@ -52,6 +65,26 @@ body{
     grid-template-columns: 20% 65% 15%;
     align-items: center;
     height: 60px;
+}
+
+#tableCetak {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#tableCetak td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+#tableCetak tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#tableCetak th{
+    background-color: grey;
 }
 
 #nav{

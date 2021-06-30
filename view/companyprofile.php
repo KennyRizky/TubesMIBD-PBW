@@ -1,7 +1,7 @@
 <div id="slideshow">
     <div class="slides fade">
         <img src="view/css/slide1.jpg" style="width:100%">
-        <div class="slidestext"><h2>Over 5,000 Certified Teachers</h2></div>
+        <div class="slidestext"><h2>Over 5,000 Certified Teachers!</h2></div>
     </div>
 
     <div class="slides fade">
@@ -11,7 +11,7 @@
 
     <div class="slides fade">
         <img src="view/css/slide3.jpg" style="width:100%">
-        <div class="slidestext"><h2>Big Brain</h2></div>
+        <div class="slidestext"><h2>Become Smart!</h2></div>
     </div>
 </div>
 

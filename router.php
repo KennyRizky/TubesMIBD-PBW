@@ -134,13 +134,9 @@
                 echo $signInAdmin->view_signInAdmin();
                 break;
             case $baseURL.'/cetak';
-                //require_once "controller/cetakController.php";
-                require "lib/fpdf.php";
-                $pdf = new FPDF();
-                $pdf->AddPage();
-                $pdf->SetFont('Arial','B',16);
-                $pdf->Cell(40,10,'Hello World!');
-                $pdf->Output();
+                require_once "controller/cetakController.php";
+                $cetak = new cetakController();
+                echo $cetak->view_cetak();
                 break;            
             default:
                 echo '404 Not Found';
