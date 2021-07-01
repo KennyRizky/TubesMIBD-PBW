@@ -10,7 +10,7 @@
 <div>
     <form action="addExam" method="POST">
         <p class="addExamForm">Add Question</p>
-        <textarea type="text" name="question" id="question" class="addExamForm" placeholder="Insert Question" rows="10" cols="85"></textarea>
+        <textarea type="text" name="question" id="question" class="addExamForm" placeholder="Insert Question" rows="10" cols="85"required></textarea>
         <p class="addExamForm">Insert Option</p>
         <div id="option">
             A <input type="text" name="optionContentA" class="optionContent"required> 

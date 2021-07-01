@@ -38,6 +38,7 @@
             <input type="submit" value="Pay" id="payBtn">
         </form>
     </div>
+    <p>Your credit will be added to your wallet after our administrators validate the transaction.</p>
 </div>
 
 <a href="index" id="donebtn">Back To Home</a>

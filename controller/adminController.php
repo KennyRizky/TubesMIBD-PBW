@@ -105,6 +105,13 @@ class adminController{
 
     }
 
+    public function deleteNilai(){
+        $IdN = $_POST['IdN'];
+        $query = "DELETE FROM validasi_nilai WHERE IdN = $IdN";
+        $query_result = $this->db->executeNonSelectQuery($query);
+
+    }
+
     public function get_nilaiValidasi(){
         // $query = "SELECT nilai.IdN, nilai_member.IdM, course.IdC, course.judulCourse, nilai.jumlah_nilai, course.batas_nilai, validasi_nilai.IdN_validasi, enrollment.wktSertif, enrollment_member.IdM 
         // FROM nilai INNER JOIN nilai_member ON nilai.IdN = nilai_member.IdN 

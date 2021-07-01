@@ -50,6 +50,13 @@ class profileMemberController{
             $query_result3 = $this->db->executeNonSelectQuery($query3);
         }
 
+        $queryEnrollmentMember = "DELETE FROM enrollment_member WHERE IdM = '$resultIdM[0]'";
+        $query_result5 = $this->db->executeNonSelectQuery($queryEnrollmentMember);
+
+        $queryNilaiMember = "DELETE FROM nilai_member WHERE IdM = '$resultIdM[0]'";
+        $query_result6 = $this->db->executeNonSelectQuery($queryNilaiMember);
+
+
         $query4 = "DELETE FROM Transaksi_kupon WHERE IdM = '$resultIdM[0]'";
         $query_result4 = $this->db->executeNonSelectQuery($query4);
 

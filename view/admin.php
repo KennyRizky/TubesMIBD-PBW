@@ -55,10 +55,16 @@
                 echo "<td>" .$row->getJumlahNilai(). "</td>" ;
                 echo "<td>" .$row->getPassingGrade(). "</td>" ;
                 echo "<td> 
+                <div style='display: flex'>
                 <form action='validateNilai' method='POST'>
                     <input type='hidden' name='IdN' value='" .$row->getIdN(). "'>
                     <input type='submit' value='validate'>
                 </form>
+                <form action='deleteNilai' method='POST'>
+                    <input type='hidden' name='IdN' value='" .$row->getIdN(). "'>
+                    <input type='submit' value='delete'>
+                </form>
+                </div>
                 </td>" ;
             }
         ?>

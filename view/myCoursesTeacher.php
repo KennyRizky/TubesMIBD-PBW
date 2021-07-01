@@ -31,7 +31,11 @@
           echo "<hr>";
           custom_echo( $row->getCourseDesc() ,300);
           echo "<hr>";
-          echo "<p>Enrollment: ".$resultEnrollment[$counter]->getIdE(). "</p>";
+          if(isset($resultEnrollment[$counter])){
+            echo "<p>Enrollment: ".$resultEnrollment[$counter]->getIdE(). "</p>";
+          }else{
+            echo "<p>No enrollment yet.</p>";
+          }
 
           echo "<form method='POST' action='seeMore'>";
               echo '<input type="hidden" name="IdC" value="' .$row->getIdC(). '">';

@@ -253,6 +253,12 @@
                 $validateNilai->validate_nilai();
                 header('Location: admin');
                 break;
+            case $baseURL.'/deleteNilai';
+                require_once "controller/adminController.php";
+                $validateNilai = new adminController();
+                $validateNilai->deleteNilai();
+                header('Location: admin');
+                break;
             case $baseURL.'/myCourses';
                 require_once "controller/coursesMemberController.php";
                 $myCourses = new coursesMemberController();
